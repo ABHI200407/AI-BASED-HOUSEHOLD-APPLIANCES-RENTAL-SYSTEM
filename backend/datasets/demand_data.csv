@@ -1,0 +1,1826 @@
+date,category,active_rentals
+2023-01-01,AC,38
+2023-01-01,Refrigerator,46
+2023-01-01,Washing Machine,49
+2023-01-01,Microwave,60
+2023-01-01,TV,57
+2023-01-02,AC,61
+2023-01-02,Refrigerator,55
+2023-01-02,Washing Machine,30
+2023-01-02,Microwave,64
+2023-01-02,TV,53
+2023-01-03,AC,58
+2023-01-03,Refrigerator,47
+2023-01-03,Washing Machine,44
+2023-01-03,Microwave,68
+2023-01-03,TV,41
+2023-01-04,AC,61
+2023-01-04,Refrigerator,41
+2023-01-04,Washing Machine,55
+2023-01-04,Microwave,48
+2023-01-04,TV,63
+2023-01-05,AC,61
+2023-01-05,Refrigerator,51
+2023-01-05,Washing Machine,46
+2023-01-05,Microwave,52
+2023-01-05,TV,54
+2023-01-06,AC,60
+2023-01-06,Refrigerator,66
+2023-01-06,Washing Machine,40
+2023-01-06,Microwave,49
+2023-01-06,TV,43
+2023-01-07,AC,43
+2023-01-07,Refrigerator,42
+2023-01-07,Washing Machine,49
+2023-01-07,Microwave,27
+2023-01-07,TV,59
+2023-01-08,AC,47
+2023-01-08,Refrigerator,53
+2023-01-08,Washing Machine,40
+2023-01-08,Microwave,49
+2023-01-08,TV,32
+2023-01-09,AC,38
+2023-01-09,Refrigerator,28
+2023-01-09,Washing Machine,44
+2023-01-09,Microwave,48
+2023-01-09,TV,47
+2023-01-10,AC,55
+2023-01-10,Refrigerator,56
+2023-01-10,Washing Machine,51
+2023-01-10,Microwave,56
+2023-01-10,TV,37
+2023-01-11,AC,37
+2023-01-11,Refrigerator,57
+2023-01-11,Washing Machine,52
+2023-01-11,Microwave,57
+2023-01-11,TV,44
+2023-01-12,AC,44
+2023-01-12,Refrigerator,46
+2023-01-12,Washing Machine,61
+2023-01-12,Microwave,49
+2023-01-12,TV,46
+2023-01-13,AC,52
+2023-01-13,Refrigerator,41
+2023-01-13,Washing Machine,68
+2023-01-13,Microwave,54
+2023-01-13,TV,46
+2023-01-14,AC,46
+2023-01-14,Refrigerator,59
+2023-01-14,Washing Machine,63
+2023-01-14,Microwave,51
+2023-01-14,TV,50
+2023-01-15,AC,55
+2023-01-15,Refrigerator,40
+2023-01-15,Washing Machine,58
+2023-01-15,Microwave,62
+2023-01-15,TV,54
+2023-01-16,AC,50
+2023-01-16,Refrigerator,42
+2023-01-16,Washing Machine,30
+2023-01-16,Microwave,53
+2023-01-16,TV,31
+2023-01-17,AC,43
+2023-01-17,Refrigerator,44
+2023-01-17,Washing Machine,46
+2023-01-17,Microwave,55
+2023-01-17,TV,48
+2023-01-18,AC,48
+2023-01-18,Refrigerator,38
+2023-01-18,Washing Machine,39
+2023-01-18,Microwave,62
+2023-01-18,TV,51
+2023-01-19,AC,60
+2023-01-19,Refrigerator,69
+2023-01-19,Washing Machine,41
+2023-01-19,Microwave,59
+2023-01-19,TV,50
+2023-01-20,AC,68
+2023-01-20,Refrigerator,64
+2023-01-20,Washing Machine,52
+2023-01-20,Microwave,37
+2023-01-20,TV,46
+2023-01-21,AC,63
+2023-01-21,Refrigerator,48
+2023-01-21,Washing Machine,63
+2023-01-21,Microwave,53
+2023-01-21,TV,39
+2023-01-22,AC,38
+2023-01-22,Refrigerator,55
+2023-01-22,Washing Machine,61
+2023-01-22,Microwave,53
+2023-01-22,TV,48
+2023-01-23,AC,39
+2023-01-23,Refrigerator,57
+2023-01-23,Washing Machine,43
+2023-01-23,Microwave,47
+2023-01-23,TV,31
+2023-01-24,AC,53
+2023-01-24,Refrigerator,60
+2023-01-24,Washing Machine,56
+2023-01-24,Microwave,36
+2023-01-24,TV,62
+2023-01-25,AC,44
+2023-01-25,Refrigerator,55
+2023-01-25,Washing Machine,52
+2023-01-25,Microwave,38
+2023-01-25,TV,57
+2023-01-26,AC,48
+2023-01-26,Refrigerator,72
+2023-01-26,Washing Machine,64
+2023-01-26,Microwave,57
+2023-01-26,TV,45
+2023-01-27,AC,41
+2023-01-27,Refrigerator,74
+2023-01-27,Washing Machine,59
+2023-01-27,Microwave,50
+2023-01-27,TV,63
+2023-01-28,AC,59
+2023-01-28,Refrigerator,62
+2023-01-28,Washing Machine,42
+2023-01-28,Microwave,62
+2023-01-28,TV,51
+2023-01-29,AC,47
+2023-01-29,Refrigerator,63
+2023-01-29,Washing Machine,59
+2023-01-29,Microwave,52
+2023-01-29,TV,56
+2023-01-30,AC,60
+2023-01-30,Refrigerator,49
+2023-01-30,Washing Machine,49
+2023-01-30,Microwave,47
+2023-01-30,TV,47
+2023-01-31,AC,62
+2023-01-31,Refrigerator,43
+2023-01-31,Washing Machine,73
+2023-01-31,Microwave,43
+2023-01-31,TV,55
+2023-02-01,AC,48
+2023-02-01,Refrigerator,58
+2023-02-01,Washing Machine,36
+2023-02-01,Microwave,50
+2023-02-01,TV,35
+2023-02-02,AC,59
+2023-02-02,Refrigerator,68
+2023-02-02,Washing Machine,44
+2023-02-02,Microwave,51
+2023-02-02,TV,35
+2023-02-03,AC,52
+2023-02-03,Refrigerator,38
+2023-02-03,Washing Machine,46
+2023-02-03,Microwave,28
+2023-02-03,TV,69
+2023-02-04,AC,56
+2023-02-04,Refrigerator,50
+2023-02-04,Washing Machine,36
+2023-02-04,Microwave,41
+2023-02-04,TV,45
+2023-02-05,AC,63
+2023-02-05,Refrigerator,55
+2023-02-05,Washing Machine,45
+2023-02-05,Microwave,45
+2023-02-05,TV,55
+2023-02-06,AC,44
+2023-02-06,Refrigerator,32
+2023-02-06,Washing Machine,42
+2023-02-06,Microwave,45
+2023-02-06,TV,46
+2023-02-07,AC,37
+2023-02-07,Refrigerator,44
+2023-02-07,Washing Machine,63
+2023-02-07,Microwave,33
+2023-02-07,TV,56
+2023-02-08,AC,47
+2023-02-08,Refrigerator,51
+2023-02-08,Washing Machine,49
+2023-02-08,Microwave,47
+2023-02-08,TV,30
+2023-02-09,AC,41
+2023-02-09,Refrigerator,47
+2023-02-09,Washing Machine,55
+2023-02-09,Microwave,50
+2023-02-09,TV,48
+2023-02-10,AC,39
+2023-02-10,Refrigerator,37
+2023-02-10,Washing Machine,83
+2023-02-10,Microwave,45
+2023-02-10,TV,37
+2023-02-11,AC,48
+2023-02-11,Refrigerator,54
+2023-02-11,Washing Machine,32
+2023-02-11,Microwave,40
+2023-02-11,TV,34
+2023-02-12,AC,44
+2023-02-12,Refrigerator,44
+2023-02-12,Washing Machine,49
+2023-02-12,Microwave,80
+2023-02-12,TV,45
+2023-02-13,AC,47
+2023-02-13,Refrigerator,44
+2023-02-13,Washing Machine,51
+2023-02-13,Microwave,61
+2023-02-13,TV,67
+2023-02-14,AC,46
+2023-02-14,Refrigerator,49
+2023-02-14,Washing Machine,47
+2023-02-14,Microwave,59
+2023-02-14,TV,42
+2023-02-15,AC,25
+2023-02-15,Refrigerator,49
+2023-02-15,Washing Machine,58
+2023-02-15,Microwave,59
+2023-02-15,TV,42
+2023-02-16,AC,58
+2023-02-16,Refrigerator,47
+2023-02-16,Washing Machine,42
+2023-02-16,Microwave,48
+2023-02-16,TV,31
+2023-02-17,AC,42
+2023-02-17,Refrigerator,72
+2023-02-17,Washing Machine,50
+2023-02-17,Microwave,52
+2023-02-17,TV,41
+2023-02-18,AC,50
+2023-02-18,Refrigerator,33
+2023-02-18,Washing Machine,55
+2023-02-18,Microwave,41
+2023-02-18,TV,42
+2023-02-19,AC,48
+2023-02-19,Refrigerator,54
+2023-02-19,Washing Machine,49
+2023-02-19,Microwave,60
+2023-02-19,TV,60
+2023-02-20,AC,37
+2023-02-20,Refrigerator,33
+2023-02-20,Washing Machine,50
+2023-02-20,Microwave,33
+2023-02-20,TV,28
+2023-02-21,AC,46
+2023-02-21,Refrigerator,53
+2023-02-21,Washing Machine,57
+2023-02-21,Microwave,58
+2023-02-21,TV,66
+2023-02-22,AC,51
+2023-02-22,Refrigerator,40
+2023-02-22,Washing Machine,51
+2023-02-22,Microwave,43
+2023-02-22,TV,53
+2023-02-23,AC,51
+2023-02-23,Refrigerator,52
+2023-02-23,Washing Machine,38
+2023-02-23,Microwave,38
+2023-02-23,TV,29
+2023-02-24,AC,32
+2023-02-24,Refrigerator,23
+2023-02-24,Washing Machine,56
+2023-02-24,Microwave,48
+2023-02-24,TV,36
+2023-02-25,AC,40
+2023-02-25,Refrigerator,23
+2023-02-25,Washing Machine,43
+2023-02-25,Microwave,66
+2023-02-25,TV,45
+2023-02-26,AC,45
+2023-02-26,Refrigerator,45
+2023-02-26,Washing Machine,42
+2023-02-26,Microwave,60
+2023-02-26,TV,44
+2023-02-27,AC,34
+2023-02-27,Refrigerator,73
+2023-02-27,Washing Machine,53
+2023-02-27,Microwave,43
+2023-02-27,TV,59
+2023-02-28,AC,41
+2023-02-28,Refrigerator,51
+2023-02-28,Washing Machine,60
+2023-02-28,Microwave,43
+2023-02-28,TV,54
+2023-03-01,AC,47
+2023-03-01,Refrigerator,42
+2023-03-01,Washing Machine,53
+2023-03-01,Microwave,50
+2023-03-01,TV,46
+2023-03-02,AC,51
+2023-03-02,Refrigerator,41
+2023-03-02,Washing Machine,60
+2023-03-02,Microwave,61
+2023-03-02,TV,38
+2023-03-03,AC,43
+2023-03-03,Refrigerator,70
+2023-03-03,Washing Machine,50
+2023-03-03,Microwave,59
+2023-03-03,TV,56
+2023-03-04,AC,59
+2023-03-04,Refrigerator,40
+2023-03-04,Washing Machine,44
+2023-03-04,Microwave,62
+2023-03-04,TV,50
+2023-03-05,AC,53
+2023-03-05,Refrigerator,36
+2023-03-05,Washing Machine,41
+2023-03-05,Microwave,61
+2023-03-05,TV,55
+2023-03-06,AC,64
+2023-03-06,Refrigerator,48
+2023-03-06,Washing Machine,38
+2023-03-06,Microwave,67
+2023-03-06,TV,40
+2023-03-07,AC,39
+2023-03-07,Refrigerator,48
+2023-03-07,Washing Machine,56
+2023-03-07,Microwave,58
+2023-03-07,TV,41
+2023-03-08,AC,48
+2023-03-08,Refrigerator,49
+2023-03-08,Washing Machine,54
+2023-03-08,Microwave,64
+2023-03-08,TV,60
+2023-03-09,AC,37
+2023-03-09,Refrigerator,41
+2023-03-09,Washing Machine,48
+2023-03-09,Microwave,58
+2023-03-09,TV,40
+2023-03-10,AC,58
+2023-03-10,Refrigerator,54
+2023-03-10,Washing Machine,22
+2023-03-10,Microwave,49
+2023-03-10,TV,63
+2023-03-11,AC,56
+2023-03-11,Refrigerator,40
+2023-03-11,Washing Machine,48
+2023-03-11,Microwave,52
+2023-03-11,TV,44
+2023-03-12,AC,33
+2023-03-12,Refrigerator,54
+2023-03-12,Washing Machine,50
+2023-03-12,Microwave,44
+2023-03-12,TV,52
+2023-03-13,AC,46
+2023-03-13,Refrigerator,53
+2023-03-13,Washing Machine,55
+2023-03-13,Microwave,47
+2023-03-13,TV,55
+2023-03-14,AC,52
+2023-03-14,Refrigerator,28
+2023-03-14,Washing Machine,48
+2023-03-14,Microwave,36
+2023-03-14,TV,43
+2023-03-15,AC,37
+2023-03-15,Refrigerator,27
+2023-03-15,Washing Machine,40
+2023-03-15,Microwave,46
+2023-03-15,TV,69
+2023-03-16,AC,62
+2023-03-16,Refrigerator,48
+2023-03-16,Washing Machine,51
+2023-03-16,Microwave,47
+2023-03-16,TV,61
+2023-03-17,AC,26
+2023-03-17,Refrigerator,38
+2023-03-17,Washing Machine,53
+2023-03-17,Microwave,46
+2023-03-17,TV,56
+2023-03-18,AC,46
+2023-03-18,Refrigerator,37
+2023-03-18,Washing Machine,62
+2023-03-18,Microwave,47
+2023-03-18,TV,54
+2023-03-19,AC,34
+2023-03-19,Refrigerator,45
+2023-03-19,Washing Machine,56
+2023-03-19,Microwave,38
+2023-03-19,TV,50
+2023-03-20,AC,51
+2023-03-20,Refrigerator,50
+2023-03-20,Washing Machine,49
+2023-03-20,Microwave,61
+2023-03-20,TV,54
+2023-03-21,AC,38
+2023-03-21,Refrigerator,47
+2023-03-21,Washing Machine,60
+2023-03-21,Microwave,32
+2023-03-21,TV,45
+2023-03-22,AC,35
+2023-03-22,Refrigerator,29
+2023-03-22,Washing Machine,45
+2023-03-22,Microwave,31
+2023-03-22,TV,57
+2023-03-23,AC,50
+2023-03-23,Refrigerator,56
+2023-03-23,Washing Machine,41
+2023-03-23,Microwave,60
+2023-03-23,TV,46
+2023-03-24,AC,68
+2023-03-24,Refrigerator,55
+2023-03-24,Washing Machine,53
+2023-03-24,Microwave,52
+2023-03-24,TV,29
+2023-03-25,AC,60
+2023-03-25,Refrigerator,43
+2023-03-25,Washing Machine,36
+2023-03-25,Microwave,54
+2023-03-25,TV,65
+2023-03-26,AC,50
+2023-03-26,Refrigerator,51
+2023-03-26,Washing Machine,30
+2023-03-26,Microwave,45
+2023-03-26,TV,51
+2023-03-27,AC,54
+2023-03-27,Refrigerator,35
+2023-03-27,Washing Machine,55
+2023-03-27,Microwave,40
+2023-03-27,TV,52
+2023-03-28,AC,65
+2023-03-28,Refrigerator,62
+2023-03-28,Washing Machine,59
+2023-03-28,Microwave,36
+2023-03-28,TV,59
+2023-03-29,AC,56
+2023-03-29,Refrigerator,67
+2023-03-29,Washing Machine,35
+2023-03-29,Microwave,58
+2023-03-29,TV,53
+2023-03-30,AC,36
+2023-03-30,Refrigerator,42
+2023-03-30,Washing Machine,65
+2023-03-30,Microwave,63
+2023-03-30,TV,54
+2023-03-31,AC,71
+2023-03-31,Refrigerator,52
+2023-03-31,Washing Machine,44
+2023-03-31,Microwave,65
+2023-03-31,TV,38
+2023-04-01,AC,68
+2023-04-01,Refrigerator,42
+2023-04-01,Washing Machine,59
+2023-04-01,Microwave,42
+2023-04-01,TV,58
+2023-04-02,AC,61
+2023-04-02,Refrigerator,52
+2023-04-02,Washing Machine,39
+2023-04-02,Microwave,60
+2023-04-02,TV,44
+2023-04-03,AC,54
+2023-04-03,Refrigerator,35
+2023-04-03,Washing Machine,62
+2023-04-03,Microwave,34
+2023-04-03,TV,40
+2023-04-04,AC,51
+2023-04-04,Refrigerator,50
+2023-04-04,Washing Machine,34
+2023-04-04,Microwave,52
+2023-04-04,TV,56
+2023-04-05,AC,30
+2023-04-05,Refrigerator,41
+2023-04-05,Washing Machine,58
+2023-04-05,Microwave,46
+2023-04-05,TV,36
+2023-04-06,AC,46
+2023-04-06,Refrigerator,57
+2023-04-06,Washing Machine,62
+2023-04-06,Microwave,48
+2023-04-06,TV,52
+2023-04-07,AC,36
+2023-04-07,Refrigerator,68
+2023-04-07,Washing Machine,59
+2023-04-07,Microwave,55
+2023-04-07,TV,50
+2023-04-08,AC,52
+2023-04-08,Refrigerator,35
+2023-04-08,Washing Machine,47
+2023-04-08,Microwave,54
+2023-04-08,TV,43
+2023-04-09,AC,40
+2023-04-09,Refrigerator,40
+2023-04-09,Washing Machine,67
+2023-04-09,Microwave,41
+2023-04-09,TV,47
+2023-04-10,AC,44
+2023-04-10,Refrigerator,56
+2023-04-10,Washing Machine,37
+2023-04-10,Microwave,55
+2023-04-10,TV,49
+2023-04-11,AC,51
+2023-04-11,Refrigerator,42
+2023-04-11,Washing Machine,54
+2023-04-11,Microwave,45
+2023-04-11,TV,50
+2023-04-12,AC,44
+2023-04-12,Refrigerator,30
+2023-04-12,Washing Machine,47
+2023-04-12,Microwave,45
+2023-04-12,TV,57
+2023-04-13,AC,50
+2023-04-13,Refrigerator,48
+2023-04-13,Washing Machine,43
+2023-04-13,Microwave,64
+2023-04-13,TV,51
+2023-04-14,AC,47
+2023-04-14,Refrigerator,34
+2023-04-14,Washing Machine,53
+2023-04-14,Microwave,36
+2023-04-14,TV,56
+2023-04-15,AC,53
+2023-04-15,Refrigerator,62
+2023-04-15,Washing Machine,63
+2023-04-15,Microwave,47
+2023-04-15,TV,55
+2023-04-16,AC,64
+2023-04-16,Refrigerator,58
+2023-04-16,Washing Machine,40
+2023-04-16,Microwave,50
+2023-04-16,TV,32
+2023-04-17,AC,51
+2023-04-17,Refrigerator,52
+2023-04-17,Washing Machine,37
+2023-04-17,Microwave,57
+2023-04-17,TV,67
+2023-04-18,AC,44
+2023-04-18,Refrigerator,49
+2023-04-18,Washing Machine,50
+2023-04-18,Microwave,42
+2023-04-18,TV,44
+2023-04-19,AC,50
+2023-04-19,Refrigerator,40
+2023-04-19,Washing Machine,46
+2023-04-19,Microwave,40
+2023-04-19,TV,52
+2023-04-20,AC,49
+2023-04-20,Refrigerator,49
+2023-04-20,Washing Machine,43
+2023-04-20,Microwave,26
+2023-04-20,TV,36
+2023-04-21,AC,48
+2023-04-21,Refrigerator,46
+2023-04-21,Washing Machine,39
+2023-04-21,Microwave,64
+2023-04-21,TV,57
+2023-04-22,AC,48
+2023-04-22,Refrigerator,48
+2023-04-22,Washing Machine,53
+2023-04-22,Microwave,27
+2023-04-22,TV,55
+2023-04-23,AC,34
+2023-04-23,Refrigerator,43
+2023-04-23,Washing Machine,39
+2023-04-23,Microwave,58
+2023-04-23,TV,64
+2023-04-24,AC,43
+2023-04-24,Refrigerator,52
+2023-04-24,Washing Machine,46
+2023-04-24,Microwave,27
+2023-04-24,TV,52
+2023-04-25,AC,54
+2023-04-25,Refrigerator,50
+2023-04-25,Washing Machine,51
+2023-04-25,Microwave,39
+2023-04-25,TV,47
+2023-04-26,AC,37
+2023-04-26,Refrigerator,45
+2023-04-26,Washing Machine,36
+2023-04-26,Microwave,60
+2023-04-26,TV,61
+2023-04-27,AC,57
+2023-04-27,Refrigerator,38
+2023-04-27,Washing Machine,40
+2023-04-27,Microwave,58
+2023-04-27,TV,57
+2023-04-28,AC,73
+2023-04-28,Refrigerator,43
+2023-04-28,Washing Machine,47
+2023-04-28,Microwave,62
+2023-04-28,TV,65
+2023-04-29,AC,55
+2023-04-29,Refrigerator,50
+2023-04-29,Washing Machine,49
+2023-04-29,Microwave,51
+2023-04-29,TV,70
+2023-04-30,AC,40
+2023-04-30,Refrigerator,53
+2023-04-30,Washing Machine,42
+2023-04-30,Microwave,64
+2023-04-30,TV,42
+2023-05-01,AC,86
+2023-05-01,Refrigerator,46
+2023-05-01,Washing Machine,39
+2023-05-01,Microwave,57
+2023-05-01,TV,45
+2023-05-02,AC,99
+2023-05-02,Refrigerator,55
+2023-05-02,Washing Machine,54
+2023-05-02,Microwave,43
+2023-05-02,TV,52
+2023-05-03,AC,96
+2023-05-03,Refrigerator,70
+2023-05-03,Washing Machine,38
+2023-05-03,Microwave,53
+2023-05-03,TV,42
+2023-05-04,AC,102
+2023-05-04,Refrigerator,62
+2023-05-04,Washing Machine,50
+2023-05-04,Microwave,38
+2023-05-04,TV,36
+2023-05-05,AC,97
+2023-05-05,Refrigerator,49
+2023-05-05,Washing Machine,58
+2023-05-05,Microwave,53
+2023-05-05,TV,46
+2023-05-06,AC,114
+2023-05-06,Refrigerator,55
+2023-05-06,Washing Machine,53
+2023-05-06,Microwave,43
+2023-05-06,TV,51
+2023-05-07,AC,103
+2023-05-07,Refrigerator,27
+2023-05-07,Washing Machine,44
+2023-05-07,Microwave,48
+2023-05-07,TV,62
+2023-05-08,AC,102
+2023-05-08,Refrigerator,41
+2023-05-08,Washing Machine,60
+2023-05-08,Microwave,39
+2023-05-08,TV,53
+2023-05-09,AC,109
+2023-05-09,Refrigerator,47
+2023-05-09,Washing Machine,51
+2023-05-09,Microwave,52
+2023-05-09,TV,44
+2023-05-10,AC,90
+2023-05-10,Refrigerator,66
+2023-05-10,Washing Machine,44
+2023-05-10,Microwave,49
+2023-05-10,TV,44
+2023-05-11,AC,94
+2023-05-11,Refrigerator,17
+2023-05-11,Washing Machine,54
+2023-05-11,Microwave,61
+2023-05-11,TV,53
+2023-05-12,AC,86
+2023-05-12,Refrigerator,50
+2023-05-12,Washing Machine,44
+2023-05-12,Microwave,42
+2023-05-12,TV,40
+2023-05-13,AC,92
+2023-05-13,Refrigerator,55
+2023-05-13,Washing Machine,51
+2023-05-13,Microwave,62
+2023-05-13,TV,46
+2023-05-14,AC,96
+2023-05-14,Refrigerator,47
+2023-05-14,Washing Machine,55
+2023-05-14,Microwave,53
+2023-05-14,TV,56
+2023-05-15,AC,103
+2023-05-15,Refrigerator,69
+2023-05-15,Washing Machine,53
+2023-05-15,Microwave,42
+2023-05-15,TV,47
+2023-05-16,AC,86
+2023-05-16,Refrigerator,62
+2023-05-16,Washing Machine,64
+2023-05-16,Microwave,34
+2023-05-16,TV,51
+2023-05-17,AC,105
+2023-05-17,Refrigerator,58
+2023-05-17,Washing Machine,52
+2023-05-17,Microwave,32
+2023-05-17,TV,36
+2023-05-18,AC,98
+2023-05-18,Refrigerator,43
+2023-05-18,Washing Machine,54
+2023-05-18,Microwave,56
+2023-05-18,TV,55
+2023-05-19,AC,97
+2023-05-19,Refrigerator,31
+2023-05-19,Washing Machine,47
+2023-05-19,Microwave,39
+2023-05-19,TV,34
+2023-05-20,AC,104
+2023-05-20,Refrigerator,35
+2023-05-20,Washing Machine,53
+2023-05-20,Microwave,58
+2023-05-20,TV,52
+2023-05-21,AC,109
+2023-05-21,Refrigerator,62
+2023-05-21,Washing Machine,38
+2023-05-21,Microwave,47
+2023-05-21,TV,58
+2023-05-22,AC,89
+2023-05-22,Refrigerator,50
+2023-05-22,Washing Machine,40
+2023-05-22,Microwave,53
+2023-05-22,TV,59
+2023-05-23,AC,108
+2023-05-23,Refrigerator,32
+2023-05-23,Washing Machine,63
+2023-05-23,Microwave,48
+2023-05-23,TV,31
+2023-05-24,AC,115
+2023-05-24,Refrigerator,55
+2023-05-24,Washing Machine,38
+2023-05-24,Microwave,51
+2023-05-24,TV,44
+2023-05-25,AC,113
+2023-05-25,Refrigerator,52
+2023-05-25,Washing Machine,55
+2023-05-25,Microwave,45
+2023-05-25,TV,52
+2023-05-26,AC,92
+2023-05-26,Refrigerator,57
+2023-05-26,Washing Machine,46
+2023-05-26,Microwave,41
+2023-05-26,TV,63
+2023-05-27,AC,88
+2023-05-27,Refrigerator,60
+2023-05-27,Washing Machine,48
+2023-05-27,Microwave,59
+2023-05-27,TV,41
+2023-05-28,AC,80
+2023-05-28,Refrigerator,44
+2023-05-28,Washing Machine,42
+2023-05-28,Microwave,45
+2023-05-28,TV,31
+2023-05-29,AC,92
+2023-05-29,Refrigerator,57
+2023-05-29,Washing Machine,46
+2023-05-29,Microwave,47
+2023-05-29,TV,63
+2023-05-30,AC,94
+2023-05-30,Refrigerator,49
+2023-05-30,Washing Machine,31
+2023-05-30,Microwave,44
+2023-05-30,TV,35
+2023-05-31,AC,116
+2023-05-31,Refrigerator,46
+2023-05-31,Washing Machine,47
+2023-05-31,Microwave,53
+2023-05-31,TV,51
+2023-06-01,AC,104
+2023-06-01,Refrigerator,63
+2023-06-01,Washing Machine,50
+2023-06-01,Microwave,55
+2023-06-01,TV,33
+2023-06-02,AC,115
+2023-06-02,Refrigerator,32
+2023-06-02,Washing Machine,64
+2023-06-02,Microwave,50
+2023-06-02,TV,55
+2023-06-03,AC,113
+2023-06-03,Refrigerator,66
+2023-06-03,Washing Machine,64
+2023-06-03,Microwave,57
+2023-06-03,TV,29
+2023-06-04,AC,114
+2023-06-04,Refrigerator,72
+2023-06-04,Washing Machine,52
+2023-06-04,Microwave,47
+2023-06-04,TV,51
+2023-06-05,AC,102
+2023-06-05,Refrigerator,57
+2023-06-05,Washing Machine,49
+2023-06-05,Microwave,34
+2023-06-05,TV,56
+2023-06-06,AC,85
+2023-06-06,Refrigerator,58
+2023-06-06,Washing Machine,55
+2023-06-06,Microwave,56
+2023-06-06,TV,40
+2023-06-07,AC,102
+2023-06-07,Refrigerator,56
+2023-06-07,Washing Machine,36
+2023-06-07,Microwave,53
+2023-06-07,TV,50
+2023-06-08,AC,97
+2023-06-08,Refrigerator,40
+2023-06-08,Washing Machine,54
+2023-06-08,Microwave,39
+2023-06-08,TV,50
+2023-06-09,AC,102
+2023-06-09,Refrigerator,35
+2023-06-09,Washing Machine,51
+2023-06-09,Microwave,50
+2023-06-09,TV,64
+2023-06-10,AC,100
+2023-06-10,Refrigerator,41
+2023-06-10,Washing Machine,61
+2023-06-10,Microwave,38
+2023-06-10,TV,49
+2023-06-11,AC,113
+2023-06-11,Refrigerator,32
+2023-06-11,Washing Machine,55
+2023-06-11,Microwave,53
+2023-06-11,TV,60
+2023-06-12,AC,93
+2023-06-12,Refrigerator,39
+2023-06-12,Washing Machine,45
+2023-06-12,Microwave,59
+2023-06-12,TV,50
+2023-06-13,AC,86
+2023-06-13,Refrigerator,62
+2023-06-13,Washing Machine,54
+2023-06-13,Microwave,52
+2023-06-13,TV,50
+2023-06-14,AC,105
+2023-06-14,Refrigerator,47
+2023-06-14,Washing Machine,62
+2023-06-14,Microwave,40
+2023-06-14,TV,60
+2023-06-15,AC,103
+2023-06-15,Refrigerator,53
+2023-06-15,Washing Machine,53
+2023-06-15,Microwave,59
+2023-06-15,TV,31
+2023-06-16,AC,126
+2023-06-16,Refrigerator,57
+2023-06-16,Washing Machine,41
+2023-06-16,Microwave,38
+2023-06-16,TV,51
+2023-06-17,AC,98
+2023-06-17,Refrigerator,49
+2023-06-17,Washing Machine,57
+2023-06-17,Microwave,57
+2023-06-17,TV,55
+2023-06-18,AC,109
+2023-06-18,Refrigerator,48
+2023-06-18,Washing Machine,55
+2023-06-18,Microwave,53
+2023-06-18,TV,46
+2023-06-19,AC,118
+2023-06-19,Refrigerator,40
+2023-06-19,Washing Machine,55
+2023-06-19,Microwave,40
+2023-06-19,TV,36
+2023-06-20,AC,100
+2023-06-20,Refrigerator,43
+2023-06-20,Washing Machine,29
+2023-06-20,Microwave,32
+2023-06-20,TV,51
+2023-06-21,AC,98
+2023-06-21,Refrigerator,37
+2023-06-21,Washing Machine,37
+2023-06-21,Microwave,34
+2023-06-21,TV,48
+2023-06-22,AC,83
+2023-06-22,Refrigerator,62
+2023-06-22,Washing Machine,55
+2023-06-22,Microwave,59
+2023-06-22,TV,51
+2023-06-23,AC,89
+2023-06-23,Refrigerator,53
+2023-06-23,Washing Machine,58
+2023-06-23,Microwave,42
+2023-06-23,TV,54
+2023-06-24,AC,113
+2023-06-24,Refrigerator,53
+2023-06-24,Washing Machine,55
+2023-06-24,Microwave,43
+2023-06-24,TV,45
+2023-06-25,AC,95
+2023-06-25,Refrigerator,60
+2023-06-25,Washing Machine,46
+2023-06-25,Microwave,43
+2023-06-25,TV,57
+2023-06-26,AC,88
+2023-06-26,Refrigerator,54
+2023-06-26,Washing Machine,51
+2023-06-26,Microwave,53
+2023-06-26,TV,48
+2023-06-27,AC,106
+2023-06-27,Refrigerator,58
+2023-06-27,Washing Machine,42
+2023-06-27,Microwave,52
+2023-06-27,TV,52
+2023-06-28,AC,91
+2023-06-28,Refrigerator,44
+2023-06-28,Washing Machine,34
+2023-06-28,Microwave,49
+2023-06-28,TV,48
+2023-06-29,AC,77
+2023-06-29,Refrigerator,56
+2023-06-29,Washing Machine,67
+2023-06-29,Microwave,53
+2023-06-29,TV,48
+2023-06-30,AC,111
+2023-06-30,Refrigerator,52
+2023-06-30,Washing Machine,52
+2023-06-30,Microwave,51
+2023-06-30,TV,55
+2023-07-01,AC,93
+2023-07-01,Refrigerator,58
+2023-07-01,Washing Machine,40
+2023-07-01,Microwave,53
+2023-07-01,TV,45
+2023-07-02,AC,99
+2023-07-02,Refrigerator,62
+2023-07-02,Washing Machine,49
+2023-07-02,Microwave,39
+2023-07-02,TV,65
+2023-07-03,AC,91
+2023-07-03,Refrigerator,48
+2023-07-03,Washing Machine,53
+2023-07-03,Microwave,38
+2023-07-03,TV,36
+2023-07-04,AC,98
+2023-07-04,Refrigerator,62
+2023-07-04,Washing Machine,38
+2023-07-04,Microwave,58
+2023-07-04,TV,36
+2023-07-05,AC,94
+2023-07-05,Refrigerator,40
+2023-07-05,Washing Machine,64
+2023-07-05,Microwave,57
+2023-07-05,TV,55
+2023-07-06,AC,116
+2023-07-06,Refrigerator,50
+2023-07-06,Washing Machine,52
+2023-07-06,Microwave,37
+2023-07-06,TV,49
+2023-07-07,AC,108
+2023-07-07,Refrigerator,58
+2023-07-07,Washing Machine,33
+2023-07-07,Microwave,53
+2023-07-07,TV,52
+2023-07-08,AC,94
+2023-07-08,Refrigerator,28
+2023-07-08,Washing Machine,50
+2023-07-08,Microwave,59
+2023-07-08,TV,57
+2023-07-09,AC,118
+2023-07-09,Refrigerator,47
+2023-07-09,Washing Machine,39
+2023-07-09,Microwave,54
+2023-07-09,TV,67
+2023-07-10,AC,115
+2023-07-10,Refrigerator,52
+2023-07-10,Washing Machine,44
+2023-07-10,Microwave,51
+2023-07-10,TV,42
+2023-07-11,AC,103
+2023-07-11,Refrigerator,62
+2023-07-11,Washing Machine,50
+2023-07-11,Microwave,46
+2023-07-11,TV,50
+2023-07-12,AC,107
+2023-07-12,Refrigerator,53
+2023-07-12,Washing Machine,49
+2023-07-12,Microwave,58
+2023-07-12,TV,43
+2023-07-13,AC,105
+2023-07-13,Refrigerator,52
+2023-07-13,Washing Machine,42
+2023-07-13,Microwave,42
+2023-07-13,TV,54
+2023-07-14,AC,114
+2023-07-14,Refrigerator,45
+2023-07-14,Washing Machine,43
+2023-07-14,Microwave,77
+2023-07-14,TV,48
+2023-07-15,AC,94
+2023-07-15,Refrigerator,30
+2023-07-15,Washing Machine,49
+2023-07-15,Microwave,43
+2023-07-15,TV,53
+2023-07-16,AC,95
+2023-07-16,Refrigerator,47
+2023-07-16,Washing Machine,50
+2023-07-16,Microwave,31
+2023-07-16,TV,52
+2023-07-17,AC,107
+2023-07-17,Refrigerator,44
+2023-07-17,Washing Machine,63
+2023-07-17,Microwave,51
+2023-07-17,TV,60
+2023-07-18,AC,111
+2023-07-18,Refrigerator,48
+2023-07-18,Washing Machine,52
+2023-07-18,Microwave,67
+2023-07-18,TV,69
+2023-07-19,AC,92
+2023-07-19,Refrigerator,65
+2023-07-19,Washing Machine,66
+2023-07-19,Microwave,60
+2023-07-19,TV,46
+2023-07-20,AC,103
+2023-07-20,Refrigerator,47
+2023-07-20,Washing Machine,46
+2023-07-20,Microwave,49
+2023-07-20,TV,34
+2023-07-21,AC,101
+2023-07-21,Refrigerator,60
+2023-07-21,Washing Machine,51
+2023-07-21,Microwave,46
+2023-07-21,TV,66
+2023-07-22,AC,87
+2023-07-22,Refrigerator,47
+2023-07-22,Washing Machine,48
+2023-07-22,Microwave,57
+2023-07-22,TV,46
+2023-07-23,AC,93
+2023-07-23,Refrigerator,58
+2023-07-23,Washing Machine,58
+2023-07-23,Microwave,54
+2023-07-23,TV,46
+2023-07-24,AC,97
+2023-07-24,Refrigerator,81
+2023-07-24,Washing Machine,44
+2023-07-24,Microwave,64
+2023-07-24,TV,57
+2023-07-25,AC,94
+2023-07-25,Refrigerator,47
+2023-07-25,Washing Machine,38
+2023-07-25,Microwave,56
+2023-07-25,TV,55
+2023-07-26,AC,110
+2023-07-26,Refrigerator,51
+2023-07-26,Washing Machine,46
+2023-07-26,Microwave,49
+2023-07-26,TV,39
+2023-07-27,AC,99
+2023-07-27,Refrigerator,71
+2023-07-27,Washing Machine,43
+2023-07-27,Microwave,40
+2023-07-27,TV,55
+2023-07-28,AC,97
+2023-07-28,Refrigerator,50
+2023-07-28,Washing Machine,59
+2023-07-28,Microwave,57
+2023-07-28,TV,44
+2023-07-29,AC,83
+2023-07-29,Refrigerator,48
+2023-07-29,Washing Machine,46
+2023-07-29,Microwave,47
+2023-07-29,TV,45
+2023-07-30,AC,115
+2023-07-30,Refrigerator,43
+2023-07-30,Washing Machine,61
+2023-07-30,Microwave,54
+2023-07-30,TV,60
+2023-07-31,AC,88
+2023-07-31,Refrigerator,43
+2023-07-31,Washing Machine,42
+2023-07-31,Microwave,48
+2023-07-31,TV,69
+2023-08-01,AC,101
+2023-08-01,Refrigerator,50
+2023-08-01,Washing Machine,43
+2023-08-01,Microwave,56
+2023-08-01,TV,53
+2023-08-02,AC,84
+2023-08-02,Refrigerator,51
+2023-08-02,Washing Machine,63
+2023-08-02,Microwave,53
+2023-08-02,TV,55
+2023-08-03,AC,104
+2023-08-03,Refrigerator,33
+2023-08-03,Washing Machine,49
+2023-08-03,Microwave,34
+2023-08-03,TV,49
+2023-08-04,AC,99
+2023-08-04,Refrigerator,57
+2023-08-04,Washing Machine,51
+2023-08-04,Microwave,49
+2023-08-04,TV,42
+2023-08-05,AC,103
+2023-08-05,Refrigerator,40
+2023-08-05,Washing Machine,45
+2023-08-05,Microwave,46
+2023-08-05,TV,53
+2023-08-06,AC,89
+2023-08-06,Refrigerator,26
+2023-08-06,Washing Machine,42
+2023-08-06,Microwave,55
+2023-08-06,TV,33
+2023-08-07,AC,90
+2023-08-07,Refrigerator,46
+2023-08-07,Washing Machine,65
+2023-08-07,Microwave,47
+2023-08-07,TV,24
+2023-08-08,AC,111
+2023-08-08,Refrigerator,46
+2023-08-08,Washing Machine,51
+2023-08-08,Microwave,62
+2023-08-08,TV,53
+2023-08-09,AC,95
+2023-08-09,Refrigerator,38
+2023-08-09,Washing Machine,52
+2023-08-09,Microwave,50
+2023-08-09,TV,37
+2023-08-10,AC,99
+2023-08-10,Refrigerator,56
+2023-08-10,Washing Machine,36
+2023-08-10,Microwave,60
+2023-08-10,TV,37
+2023-08-11,AC,83
+2023-08-11,Refrigerator,46
+2023-08-11,Washing Machine,62
+2023-08-11,Microwave,43
+2023-08-11,TV,40
+2023-08-12,AC,96
+2023-08-12,Refrigerator,49
+2023-08-12,Washing Machine,61
+2023-08-12,Microwave,41
+2023-08-12,TV,38
+2023-08-13,AC,112
+2023-08-13,Refrigerator,29
+2023-08-13,Washing Machine,51
+2023-08-13,Microwave,51
+2023-08-13,TV,37
+2023-08-14,AC,98
+2023-08-14,Refrigerator,44
+2023-08-14,Washing Machine,51
+2023-08-14,Microwave,52
+2023-08-14,TV,64
+2023-08-15,AC,92
+2023-08-15,Refrigerator,42
+2023-08-15,Washing Machine,47
+2023-08-15,Microwave,57
+2023-08-15,TV,49
+2023-08-16,AC,83
+2023-08-16,Refrigerator,51
+2023-08-16,Washing Machine,63
+2023-08-16,Microwave,44
+2023-08-16,TV,53
+2023-08-17,AC,106
+2023-08-17,Refrigerator,45
+2023-08-17,Washing Machine,34
+2023-08-17,Microwave,48
+2023-08-17,TV,50
+2023-08-18,AC,104
+2023-08-18,Refrigerator,48
+2023-08-18,Washing Machine,53
+2023-08-18,Microwave,45
+2023-08-18,TV,63
+2023-08-19,AC,111
+2023-08-19,Refrigerator,30
+2023-08-19,Washing Machine,57
+2023-08-19,Microwave,54
+2023-08-19,TV,48
+2023-08-20,AC,99
+2023-08-20,Refrigerator,53
+2023-08-20,Washing Machine,51
+2023-08-20,Microwave,50
+2023-08-20,TV,56
+2023-08-21,AC,97
+2023-08-21,Refrigerator,65
+2023-08-21,Washing Machine,51
+2023-08-21,Microwave,54
+2023-08-21,TV,39
+2023-08-22,AC,102
+2023-08-22,Refrigerator,37
+2023-08-22,Washing Machine,49
+2023-08-22,Microwave,61
+2023-08-22,TV,44
+2023-08-23,AC,104
+2023-08-23,Refrigerator,38
+2023-08-23,Washing Machine,72
+2023-08-23,Microwave,55
+2023-08-23,TV,55
+2023-08-24,AC,95
+2023-08-24,Refrigerator,41
+2023-08-24,Washing Machine,32
+2023-08-24,Microwave,42
+2023-08-24,TV,50
+2023-08-25,AC,110
+2023-08-25,Refrigerator,45
+2023-08-25,Washing Machine,35
+2023-08-25,Microwave,64
+2023-08-25,TV,43
+2023-08-26,AC,101
+2023-08-26,Refrigerator,52
+2023-08-26,Washing Machine,71
+2023-08-26,Microwave,65
+2023-08-26,TV,46
+2023-08-27,AC,104
+2023-08-27,Refrigerator,59
+2023-08-27,Washing Machine,65
+2023-08-27,Microwave,50
+2023-08-27,TV,43
+2023-08-28,AC,97
+2023-08-28,Refrigerator,54
+2023-08-28,Washing Machine,42
+2023-08-28,Microwave,52
+2023-08-28,TV,67
+2023-08-29,AC,108
+2023-08-29,Refrigerator,48
+2023-08-29,Washing Machine,31
+2023-08-29,Microwave,47
+2023-08-29,TV,44
+2023-08-30,AC,86
+2023-08-30,Refrigerator,47
+2023-08-30,Washing Machine,45
+2023-08-30,Microwave,37
+2023-08-30,TV,58
+2023-08-31,AC,101
+2023-08-31,Refrigerator,67
+2023-08-31,Washing Machine,52
+2023-08-31,Microwave,48
+2023-08-31,TV,42
+2023-09-01,AC,50
+2023-09-01,Refrigerator,66
+2023-09-01,Washing Machine,52
+2023-09-01,Microwave,57
+2023-09-01,TV,55
+2023-09-02,AC,54
+2023-09-02,Refrigerator,51
+2023-09-02,Washing Machine,62
+2023-09-02,Microwave,44
+2023-09-02,TV,45
+2023-09-03,AC,55
+2023-09-03,Refrigerator,43
+2023-09-03,Washing Machine,38
+2023-09-03,Microwave,44
+2023-09-03,TV,49
+2023-09-04,AC,50
+2023-09-04,Refrigerator,38
+2023-09-04,Washing Machine,45
+2023-09-04,Microwave,49
+2023-09-04,TV,55
+2023-09-05,AC,42
+2023-09-05,Refrigerator,44
+2023-09-05,Washing Machine,60
+2023-09-05,Microwave,39
+2023-09-05,TV,47
+2023-09-06,AC,64
+2023-09-06,Refrigerator,41
+2023-09-06,Washing Machine,51
+2023-09-06,Microwave,43
+2023-09-06,TV,38
+2023-09-07,AC,52
+2023-09-07,Refrigerator,36
+2023-09-07,Washing Machine,63
+2023-09-07,Microwave,66
+2023-09-07,TV,44
+2023-09-08,AC,36
+2023-09-08,Refrigerator,52
+2023-09-08,Washing Machine,58
+2023-09-08,Microwave,50
+2023-09-08,TV,30
+2023-09-09,AC,54
+2023-09-09,Refrigerator,50
+2023-09-09,Washing Machine,50
+2023-09-09,Microwave,65
+2023-09-09,TV,72
+2023-09-10,AC,57
+2023-09-10,Refrigerator,49
+2023-09-10,Washing Machine,50
+2023-09-10,Microwave,48
+2023-09-10,TV,67
+2023-09-11,AC,42
+2023-09-11,Refrigerator,57
+2023-09-11,Washing Machine,47
+2023-09-11,Microwave,47
+2023-09-11,TV,59
+2023-09-12,AC,51
+2023-09-12,Refrigerator,45
+2023-09-12,Washing Machine,42
+2023-09-12,Microwave,45
+2023-09-12,TV,69
+2023-09-13,AC,57
+2023-09-13,Refrigerator,40
+2023-09-13,Washing Machine,38
+2023-09-13,Microwave,64
+2023-09-13,TV,54
+2023-09-14,AC,44
+2023-09-14,Refrigerator,44
+2023-09-14,Washing Machine,28
+2023-09-14,Microwave,33
+2023-09-14,TV,46
+2023-09-15,AC,50
+2023-09-15,Refrigerator,51
+2023-09-15,Washing Machine,52
+2023-09-15,Microwave,44
+2023-09-15,TV,41
+2023-09-16,AC,43
+2023-09-16,Refrigerator,45
+2023-09-16,Washing Machine,55
+2023-09-16,Microwave,52
+2023-09-16,TV,44
+2023-09-17,AC,60
+2023-09-17,Refrigerator,49
+2023-09-17,Washing Machine,72
+2023-09-17,Microwave,54
+2023-09-17,TV,42
+2023-09-18,AC,43
+2023-09-18,Refrigerator,66
+2023-09-18,Washing Machine,77
+2023-09-18,Microwave,45
+2023-09-18,TV,63
+2023-09-19,AC,47
+2023-09-19,Refrigerator,41
+2023-09-19,Washing Machine,43
+2023-09-19,Microwave,57
+2023-09-19,TV,33
+2023-09-20,AC,47
+2023-09-20,Refrigerator,21
+2023-09-20,Washing Machine,61
+2023-09-20,Microwave,52
+2023-09-20,TV,55
+2023-09-21,AC,46
+2023-09-21,Refrigerator,51
+2023-09-21,Washing Machine,63
+2023-09-21,Microwave,38
+2023-09-21,TV,56
+2023-09-22,AC,43
+2023-09-22,Refrigerator,32
+2023-09-22,Washing Machine,52
+2023-09-22,Microwave,69
+2023-09-22,TV,47
+2023-09-23,AC,47
+2023-09-23,Refrigerator,52
+2023-09-23,Washing Machine,49
+2023-09-23,Microwave,31
+2023-09-23,TV,68
+2023-09-24,AC,56
+2023-09-24,Refrigerator,47
+2023-09-24,Washing Machine,46
+2023-09-24,Microwave,48
+2023-09-24,TV,33
+2023-09-25,AC,33
+2023-09-25,Refrigerator,47
+2023-09-25,Washing Machine,48
+2023-09-25,Microwave,58
+2023-09-25,TV,50
+2023-09-26,AC,51
+2023-09-26,Refrigerator,37
+2023-09-26,Washing Machine,46
+2023-09-26,Microwave,42
+2023-09-26,TV,43
+2023-09-27,AC,51
+2023-09-27,Refrigerator,47
+2023-09-27,Washing Machine,55
+2023-09-27,Microwave,60
+2023-09-27,TV,57
+2023-09-28,AC,44
+2023-09-28,Refrigerator,48
+2023-09-28,Washing Machine,37
+2023-09-28,Microwave,69
+2023-09-28,TV,36
+2023-09-29,AC,55
+2023-09-29,Refrigerator,45
+2023-09-29,Washing Machine,57
+2023-09-29,Microwave,68
+2023-09-29,TV,43
+2023-09-30,AC,49
+2023-09-30,Refrigerator,19
+2023-09-30,Washing Machine,57
+2023-09-30,Microwave,47
+2023-09-30,TV,41
+2023-10-01,AC,80
+2023-10-01,Refrigerator,49
+2023-10-01,Washing Machine,33
+2023-10-01,Microwave,39
+2023-10-01,TV,46
+2023-10-02,AC,53
+2023-10-02,Refrigerator,46
+2023-10-02,Washing Machine,41
+2023-10-02,Microwave,60
+2023-10-02,TV,53
+2023-10-03,AC,59
+2023-10-03,Refrigerator,46
+2023-10-03,Washing Machine,42
+2023-10-03,Microwave,55
+2023-10-03,TV,34
+2023-10-04,AC,40
+2023-10-04,Refrigerator,61
+2023-10-04,Washing Machine,52
+2023-10-04,Microwave,39
+2023-10-04,TV,45
+2023-10-05,AC,54
+2023-10-05,Refrigerator,65
+2023-10-05,Washing Machine,42
+2023-10-05,Microwave,55
+2023-10-05,TV,64
+2023-10-06,AC,56
+2023-10-06,Refrigerator,51
+2023-10-06,Washing Machine,48
+2023-10-06,Microwave,37
+2023-10-06,TV,51
+2023-10-07,AC,52
+2023-10-07,Refrigerator,35
+2023-10-07,Washing Machine,45
+2023-10-07,Microwave,47
+2023-10-07,TV,57
+2023-10-08,AC,38
+2023-10-08,Refrigerator,56
+2023-10-08,Washing Machine,39
+2023-10-08,Microwave,47
+2023-10-08,TV,42
+2023-10-09,AC,63
+2023-10-09,Refrigerator,44
+2023-10-09,Washing Machine,53
+2023-10-09,Microwave,38
+2023-10-09,TV,56
+2023-10-10,AC,50
+2023-10-10,Refrigerator,51
+2023-10-10,Washing Machine,44
+2023-10-10,Microwave,34
+2023-10-10,TV,53
+2023-10-11,AC,56
+2023-10-11,Refrigerator,54
+2023-10-11,Washing Machine,53
+2023-10-11,Microwave,47
+2023-10-11,TV,42
+2023-10-12,AC,38
+2023-10-12,Refrigerator,45
+2023-10-12,Washing Machine,50
+2023-10-12,Microwave,74
+2023-10-12,TV,30
+2023-10-13,AC,66
+2023-10-13,Refrigerator,55
+2023-10-13,Washing Machine,52
+2023-10-13,Microwave,56
+2023-10-13,TV,46
+2023-10-14,AC,67
+2023-10-14,Refrigerator,56
+2023-10-14,Washing Machine,50
+2023-10-14,Microwave,46
+2023-10-14,TV,54
+2023-10-15,AC,60
+2023-10-15,Refrigerator,47
+2023-10-15,Washing Machine,43
+2023-10-15,Microwave,46
+2023-10-15,TV,62
+2023-10-16,AC,49
+2023-10-16,Refrigerator,50
+2023-10-16,Washing Machine,52
+2023-10-16,Microwave,63
+2023-10-16,TV,37
+2023-10-17,AC,43
+2023-10-17,Refrigerator,43
+2023-10-17,Washing Machine,47
+2023-10-17,Microwave,58
+2023-10-17,TV,32
+2023-10-18,AC,83
+2023-10-18,Refrigerator,71
+2023-10-18,Washing Machine,40
+2023-10-18,Microwave,47
+2023-10-18,TV,53
+2023-10-19,AC,41
+2023-10-19,Refrigerator,53
+2023-10-19,Washing Machine,35
+2023-10-19,Microwave,65
+2023-10-19,TV,50
+2023-10-20,AC,62
+2023-10-20,Refrigerator,31
+2023-10-20,Washing Machine,55
+2023-10-20,Microwave,36
+2023-10-20,TV,60
+2023-10-21,AC,55
+2023-10-21,Refrigerator,49
+2023-10-21,Washing Machine,78
+2023-10-21,Microwave,45
+2023-10-21,TV,23
+2023-10-22,AC,36
+2023-10-22,Refrigerator,39
+2023-10-22,Washing Machine,46
+2023-10-22,Microwave,47
+2023-10-22,TV,59
+2023-10-23,AC,53
+2023-10-23,Refrigerator,43
+2023-10-23,Washing Machine,34
+2023-10-23,Microwave,43
+2023-10-23,TV,50
+2023-10-24,AC,48
+2023-10-24,Refrigerator,51
+2023-10-24,Washing Machine,50
+2023-10-24,Microwave,45
+2023-10-24,TV,52
+2023-10-25,AC,47
+2023-10-25,Refrigerator,59
+2023-10-25,Washing Machine,45
+2023-10-25,Microwave,43
+2023-10-25,TV,52
+2023-10-26,AC,88
+2023-10-26,Refrigerator,45
+2023-10-26,Washing Machine,49
+2023-10-26,Microwave,38
+2023-10-26,TV,52
+2023-10-27,AC,48
+2023-10-27,Refrigerator,47
+2023-10-27,Washing Machine,66
+2023-10-27,Microwave,64
+2023-10-27,TV,43
+2023-10-28,AC,46
+2023-10-28,Refrigerator,47
+2023-10-28,Washing Machine,49
+2023-10-28,Microwave,67
+2023-10-28,TV,47
+2023-10-29,AC,63
+2023-10-29,Refrigerator,59
+2023-10-29,Washing Machine,57
+2023-10-29,Microwave,52
+2023-10-29,TV,64
+2023-10-30,AC,42
+2023-10-30,Refrigerator,35
+2023-10-30,Washing Machine,51
+2023-10-30,Microwave,53
+2023-10-30,TV,58
+2023-10-31,AC,54
+2023-10-31,Refrigerator,51
+2023-10-31,Washing Machine,61
+2023-10-31,Microwave,39
+2023-10-31,TV,70
+2023-11-01,AC,23
+2023-11-01,Refrigerator,55
+2023-11-01,Washing Machine,51
+2023-11-01,Microwave,45
+2023-11-01,TV,65
+2023-11-02,AC,51
+2023-11-02,Refrigerator,50
+2023-11-02,Washing Machine,59
+2023-11-02,Microwave,39
+2023-11-02,TV,35
+2023-11-03,AC,52
+2023-11-03,Refrigerator,41
+2023-11-03,Washing Machine,71
+2023-11-03,Microwave,35
+2023-11-03,TV,45
+2023-11-04,AC,51
+2023-11-04,Refrigerator,54
+2023-11-04,Washing Machine,53
+2023-11-04,Microwave,69
+2023-11-04,TV,62
+2023-11-05,AC,45
+2023-11-05,Refrigerator,54
+2023-11-05,Washing Machine,42
+2023-11-05,Microwave,46
+2023-11-05,TV,40
+2023-11-06,AC,55
+2023-11-06,Refrigerator,47
+2023-11-06,Washing Machine,45
+2023-11-06,Microwave,47
+2023-11-06,TV,41
+2023-11-07,AC,69
+2023-11-07,Refrigerator,36
+2023-11-07,Washing Machine,36
+2023-11-07,Microwave,46
+2023-11-07,TV,53
+2023-11-08,AC,55
+2023-11-08,Refrigerator,47
+2023-11-08,Washing Machine,50
+2023-11-08,Microwave,42
+2023-11-08,TV,41
+2023-11-09,AC,46
+2023-11-09,Refrigerator,52
+2023-11-09,Washing Machine,34
+2023-11-09,Microwave,41
+2023-11-09,TV,48
+2023-11-10,AC,53
+2023-11-10,Refrigerator,47
+2023-11-10,Washing Machine,46
+2023-11-10,Microwave,50
+2023-11-10,TV,70
+2023-11-11,AC,44
+2023-11-11,Refrigerator,54
+2023-11-11,Washing Machine,54
+2023-11-11,Microwave,66
+2023-11-11,TV,42
+2023-11-12,AC,49
+2023-11-12,Refrigerator,61
+2023-11-12,Washing Machine,34
+2023-11-12,Microwave,46
+2023-11-12,TV,65
+2023-11-13,AC,44
+2023-11-13,Refrigerator,48
+2023-11-13,Washing Machine,42
+2023-11-13,Microwave,37
+2023-11-13,TV,69
+2023-11-14,AC,64
+2023-11-14,Refrigerator,52
+2023-11-14,Washing Machine,55
+2023-11-14,Microwave,44
+2023-11-14,TV,32
+2023-11-15,AC,54
+2023-11-15,Refrigerator,44
+2023-11-15,Washing Machine,41
+2023-11-15,Microwave,34
+2023-11-15,TV,48
+2023-11-16,AC,34
+2023-11-16,Refrigerator,24
+2023-11-16,Washing Machine,42
+2023-11-16,Microwave,49
+2023-11-16,TV,46
+2023-11-17,AC,56
+2023-11-17,Refrigerator,55
+2023-11-17,Washing Machine,40
+2023-11-17,Microwave,46
+2023-11-17,TV,66
+2023-11-18,AC,54
+2023-11-18,Refrigerator,45
+2023-11-18,Washing Machine,36
+2023-11-18,Microwave,45
+2023-11-18,TV,45
+2023-11-19,AC,31
+2023-11-19,Refrigerator,55
+2023-11-19,Washing Machine,54
+2023-11-19,Microwave,61
+2023-11-19,TV,38
+2023-11-20,AC,53
+2023-11-20,Refrigerator,34
+2023-11-20,Washing Machine,33
+2023-11-20,Microwave,53
+2023-11-20,TV,26
+2023-11-21,AC,56
+2023-11-21,Refrigerator,59
+2023-11-21,Washing Machine,60
+2023-11-21,Microwave,47
+2023-11-21,TV,57
+2023-11-22,AC,52
+2023-11-22,Refrigerator,44
+2023-11-22,Washing Machine,61
+2023-11-22,Microwave,61
+2023-11-22,TV,53
+2023-11-23,AC,39
+2023-11-23,Refrigerator,53
+2023-11-23,Washing Machine,35
+2023-11-23,Microwave,41
+2023-11-23,TV,48
+2023-11-24,AC,53
+2023-11-24,Refrigerator,40
+2023-11-24,Washing Machine,42
+2023-11-24,Microwave,52
+2023-11-24,TV,54
+2023-11-25,AC,35
+2023-11-25,Refrigerator,42
+2023-11-25,Washing Machine,42
+2023-11-25,Microwave,41
+2023-11-25,TV,60
+2023-11-26,AC,54
+2023-11-26,Refrigerator,46
+2023-11-26,Washing Machine,65
+2023-11-26,Microwave,26
+2023-11-26,TV,36
+2023-11-27,AC,63
+2023-11-27,Refrigerator,54
+2023-11-27,Washing Machine,59
+2023-11-27,Microwave,49
+2023-11-27,TV,55
+2023-11-28,AC,49
+2023-11-28,Refrigerator,60
+2023-11-28,Washing Machine,47
+2023-11-28,Microwave,49
+2023-11-28,TV,60
+2023-11-29,AC,41
+2023-11-29,Refrigerator,61
+2023-11-29,Washing Machine,54
+2023-11-29,Microwave,66
+2023-11-29,TV,45
+2023-11-30,AC,53
+2023-11-30,Refrigerator,46
+2023-11-30,Washing Machine,42
+2023-11-30,Microwave,51
+2023-11-30,TV,66
+2023-12-01,AC,47
+2023-12-01,Refrigerator,44
+2023-12-01,Washing Machine,28
+2023-12-01,Microwave,63
+2023-12-01,TV,57
+2023-12-02,AC,38
+2023-12-02,Refrigerator,57
+2023-12-02,Washing Machine,46
+2023-12-02,Microwave,48
+2023-12-02,TV,66
+2023-12-03,AC,43
+2023-12-03,Refrigerator,50
+2023-12-03,Washing Machine,60
+2023-12-03,Microwave,49
+2023-12-03,TV,64
+2023-12-04,AC,53
+2023-12-04,Refrigerator,39
+2023-12-04,Washing Machine,45
+2023-12-04,Microwave,67
+2023-12-04,TV,31
+2023-12-05,AC,39
+2023-12-05,Refrigerator,54
+2023-12-05,Washing Machine,51
+2023-12-05,Microwave,47
+2023-12-05,TV,55
+2023-12-06,AC,54
+2023-12-06,Refrigerator,51
+2023-12-06,Washing Machine,58
+2023-12-06,Microwave,48
+2023-12-06,TV,79
+2023-12-07,AC,30
+2023-12-07,Refrigerator,32
+2023-12-07,Washing Machine,72
+2023-12-07,Microwave,61
+2023-12-07,TV,45
+2023-12-08,AC,49
+2023-12-08,Refrigerator,41
+2023-12-08,Washing Machine,50
+2023-12-08,Microwave,36
+2023-12-08,TV,54
+2023-12-09,AC,65
+2023-12-09,Refrigerator,32
+2023-12-09,Washing Machine,49
+2023-12-09,Microwave,50
+2023-12-09,TV,45
+2023-12-10,AC,31
+2023-12-10,Refrigerator,52
+2023-12-10,Washing Machine,59
+2023-12-10,Microwave,50
+2023-12-10,TV,64
+2023-12-11,AC,51
+2023-12-11,Refrigerator,56
+2023-12-11,Washing Machine,69
+2023-12-11,Microwave,56
+2023-12-11,TV,47
+2023-12-12,AC,60
+2023-12-12,Refrigerator,42
+2023-12-12,Washing Machine,57
+2023-12-12,Microwave,69
+2023-12-12,TV,53
+2023-12-13,AC,53
+2023-12-13,Refrigerator,40
+2023-12-13,Washing Machine,27
+2023-12-13,Microwave,42
+2023-12-13,TV,63
+2023-12-14,AC,51
+2023-12-14,Refrigerator,52
+2023-12-14,Washing Machine,54
+2023-12-14,Microwave,43
+2023-12-14,TV,39
+2023-12-15,AC,61
+2023-12-15,Refrigerator,44
+2023-12-15,Washing Machine,49
+2023-12-15,Microwave,47
+2023-12-15,TV,68
+2023-12-16,AC,50
+2023-12-16,Refrigerator,35
+2023-12-16,Washing Machine,51
+2023-12-16,Microwave,39
+2023-12-16,TV,25
+2023-12-17,AC,56
+2023-12-17,Refrigerator,45
+2023-12-17,Washing Machine,47
+2023-12-17,Microwave,55
+2023-12-17,TV,57
+2023-12-18,AC,35
+2023-12-18,Refrigerator,51
+2023-12-18,Washing Machine,51
+2023-12-18,Microwave,64
+2023-12-18,TV,44
+2023-12-19,AC,37
+2023-12-19,Refrigerator,47
+2023-12-19,Washing Machine,52
+2023-12-19,Microwave,66
+2023-12-19,TV,59
+2023-12-20,AC,65
+2023-12-20,Refrigerator,48
+2023-12-20,Washing Machine,40
+2023-12-20,Microwave,57
+2023-12-20,TV,44
+2023-12-21,AC,44
+2023-12-21,Refrigerator,42
+2023-12-21,Washing Machine,50
+2023-12-21,Microwave,61
+2023-12-21,TV,28
+2023-12-22,AC,55
+2023-12-22,Refrigerator,46
+2023-12-22,Washing Machine,50
+2023-12-22,Microwave,56
+2023-12-22,TV,38
+2023-12-23,AC,52
+2023-12-23,Refrigerator,61
+2023-12-23,Washing Machine,45
+2023-12-23,Microwave,51
+2023-12-23,TV,47
+2023-12-24,AC,60
+2023-12-24,Refrigerator,51
+2023-12-24,Washing Machine,55
+2023-12-24,Microwave,36
+2023-12-24,TV,26
+2023-12-25,AC,43
+2023-12-25,Refrigerator,47
+2023-12-25,Washing Machine,38
+2023-12-25,Microwave,40
+2023-12-25,TV,43
+2023-12-26,AC,49
+2023-12-26,Refrigerator,47
+2023-12-26,Washing Machine,40
+2023-12-26,Microwave,43
+2023-12-26,TV,49
+2023-12-27,AC,57
+2023-12-27,Refrigerator,63
+2023-12-27,Washing Machine,50
+2023-12-27,Microwave,62
+2023-12-27,TV,68
+2023-12-28,AC,44
+2023-12-28,Refrigerator,32
+2023-12-28,Washing Machine,53
+2023-12-28,Microwave,58
+2023-12-28,TV,32
+2023-12-29,AC,52
+2023-12-29,Refrigerator,56
+2023-12-29,Washing Machine,50
+2023-12-29,Microwave,48
+2023-12-29,TV,43
+2023-12-30,AC,41
+2023-12-30,Refrigerator,43
+2023-12-30,Washing Machine,46
+2023-12-30,Microwave,60
+2023-12-30,TV,61
+2023-12-31,AC,37
+2023-12-31,Refrigerator,38
+2023-12-31,Washing Machine,52
+2023-12-31,Microwave,43
+2023-12-31,TV,47

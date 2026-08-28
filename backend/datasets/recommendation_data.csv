@@ -1,0 +1,337 @@
+tenant_id,category,view_count,booking_count,rating
+user_1,TV,4,4,
+user_2,AC,9,1,3.0
+user_2,Refrigerator,3,0,
+user_2,Washing Machine,17,2,
+user_2,Microwave,1,2,1.0
+user_2,TV,3,1,
+user_3,AC,5,2,3.0
+user_3,Refrigerator,16,3,2.0
+user_3,Washing Machine,18,0,
+user_3,TV,11,3,2.0
+user_5,AC,3,0,
+user_5,Washing Machine,9,1,
+user_5,Microwave,2,4,2.0
+user_5,TV,1,3,
+user_6,Refrigerator,8,3,
+user_6,Washing Machine,8,2,
+user_6,Microwave,14,4,5.0
+user_7,AC,15,1,
+user_7,TV,3,3,4.0
+user_8,AC,1,1,1.0
+user_8,Washing Machine,15,1,
+user_9,AC,3,3,3.0
+user_9,Refrigerator,8,0,
+user_9,Microwave,11,4,
+user_10,AC,18,2,
+user_10,Washing Machine,5,1,4.0
+user_10,Microwave,13,2,
+user_11,AC,6,3,2.0
+user_11,Washing Machine,19,1,
+user_11,Microwave,16,1,
+user_12,AC,5,1,3.0
+user_12,Refrigerator,5,4,
+user_12,Washing Machine,3,2,
+user_13,AC,3,4,
+user_13,Washing Machine,1,2,4.0
+user_13,Microwave,9,2,4.0
+user_13,TV,17,2,5.0
+user_14,AC,7,4,
+user_14,Washing Machine,4,3,
+user_14,Microwave,3,1,4.0
+user_14,TV,7,2,5.0
+user_15,AC,6,0,
+user_15,Refrigerator,13,4,
+user_15,Washing Machine,1,4,1.0
+user_15,Microwave,11,2,
+user_15,TV,9,4,
+user_16,AC,8,4,
+user_16,Refrigerator,19,1,2.0
+user_16,Washing Machine,3,0,
+user_16,Microwave,11,4,
+user_16,TV,6,0,
+user_17,Refrigerator,6,2,
+user_17,Microwave,18,2,3.0
+user_17,TV,11,1,
+user_18,AC,15,3,
+user_18,Refrigerator,8,4,
+user_18,Washing Machine,7,1,
+user_19,AC,6,2,5.0
+user_19,Refrigerator,6,4,
+user_19,Washing Machine,10,4,
+user_19,Microwave,5,3,4.0
+user_20,AC,15,4,4.0
+user_20,Refrigerator,12,2,4.0
+user_20,Washing Machine,15,0,4.0
+user_20,Microwave,7,2,4.0
+user_20,TV,16,0,
+user_21,AC,9,2,
+user_21,Refrigerator,2,2,
+user_21,TV,17,0,3.0
+user_22,AC,18,2,
+user_22,Washing Machine,1,1,3.0
+user_22,TV,3,1,
+user_23,Refrigerator,16,0,
+user_23,Microwave,5,1,
+user_24,Washing Machine,9,4,3.0
+user_24,Microwave,2,2,
+user_25,AC,1,4,3.0
+user_25,Refrigerator,16,2,
+user_25,TV,11,1,4.0
+user_26,Microwave,6,4,
+user_27,AC,19,3,4.0
+user_27,Refrigerator,18,4,
+user_27,Washing Machine,12,0,4.0
+user_27,Microwave,8,4,5.0
+user_27,TV,13,1,
+user_28,AC,19,1,1.0
+user_28,Refrigerator,1,4,
+user_28,Microwave,9,2,1.0
+user_29,AC,18,2,4.0
+user_29,Washing Machine,5,3,2.0
+user_29,Microwave,16,3,5.0
+user_30,AC,17,4,
+user_30,Refrigerator,11,4,
+user_30,Washing Machine,18,2,
+user_30,TV,13,2,
+user_31,AC,15,2,
+user_31,Refrigerator,17,1,3.0
+user_31,Washing Machine,8,4,3.0
+user_31,Microwave,2,4,
+user_31,TV,19,4,
+user_32,Microwave,2,1,
+user_32,TV,4,0,2.0
+user_33,Washing Machine,9,4,3.0
+user_33,Microwave,18,0,
+user_33,TV,6,2,5.0
+user_34,Refrigerator,12,1,5.0
+user_34,Microwave,18,3,
+user_35,Washing Machine,19,2,4.0
+user_36,AC,5,3,
+user_36,Refrigerator,16,1,
+user_36,Washing Machine,7,2,
+user_36,Microwave,12,1,
+user_37,AC,9,3,
+user_37,Refrigerator,15,2,3.0
+user_37,Washing Machine,8,4,
+user_37,Microwave,17,1,
+user_37,TV,19,3,5.0
+user_38,Refrigerator,19,0,
+user_38,Microwave,8,3,
+user_38,TV,1,4,5.0
+user_39,Washing Machine,11,2,4.0
+user_39,Microwave,13,3,
+user_40,AC,16,3,
+user_40,Refrigerator,17,0,
+user_40,Washing Machine,3,0,2.0
+user_40,Microwave,9,4,3.0
+user_40,TV,19,0,
+user_41,Refrigerator,13,3,
+user_41,Washing Machine,5,3,
+user_41,TV,15,3,2.0
+user_42,AC,11,0,4.0
+user_42,Refrigerator,9,4,
+user_42,Microwave,16,0,
+user_42,TV,1,2,3.0
+user_43,AC,5,1,2.0
+user_43,Refrigerator,3,1,4.0
+user_43,Washing Machine,12,3,
+user_43,Microwave,4,3,
+user_44,AC,14,0,1.0
+user_44,Washing Machine,5,0,
+user_44,Microwave,12,4,
+user_44,TV,17,1,2.0
+user_45,AC,7,0,3.0
+user_45,Refrigerator,14,0,1.0
+user_45,Washing Machine,18,2,
+user_45,Microwave,17,3,1.0
+user_45,TV,3,2,4.0
+user_46,Washing Machine,15,0,
+user_46,Microwave,15,1,5.0
+user_46,TV,17,3,
+user_47,AC,13,1,2.0
+user_47,Refrigerator,5,4,
+user_47,TV,5,1,
+user_48,Washing Machine,8,1,4.0
+user_48,TV,18,0,
+user_49,AC,6,2,
+user_49,Refrigerator,1,4,5.0
+user_49,Microwave,15,2,4.0
+user_50,AC,2,4,1.0
+user_50,Refrigerator,2,4,4.0
+user_51,AC,6,3,
+user_51,Microwave,2,0,
+user_52,Refrigerator,18,0,
+user_52,Washing Machine,17,4,
+user_52,Microwave,5,2,
+user_52,TV,18,2,5.0
+user_53,Washing Machine,14,0,2.0
+user_53,Microwave,8,3,
+user_53,TV,19,0,3.0
+user_54,Microwave,15,1,2.0
+user_54,TV,9,2,5.0
+user_55,AC,4,0,
+user_55,Refrigerator,11,2,
+user_55,Washing Machine,4,0,5.0
+user_55,Microwave,5,4,
+user_56,AC,5,4,3.0
+user_56,Refrigerator,15,4,3.0
+user_56,Washing Machine,6,1,2.0
+user_57,AC,2,2,
+user_57,Refrigerator,5,0,5.0
+user_57,Washing Machine,5,3,
+user_57,TV,16,1,
+user_58,AC,17,3,
+user_58,Microwave,4,0,2.0
+user_59,AC,15,2,3.0
+user_59,Refrigerator,17,0,
+user_59,Washing Machine,8,1,
+user_59,Microwave,5,0,1.0
+user_59,TV,18,1,
+user_60,AC,10,3,
+user_60,Refrigerator,19,2,1.0
+user_60,Washing Machine,16,1,2.0
+user_61,AC,17,2,3.0
+user_61,Refrigerator,15,3,
+user_61,Washing Machine,1,4,
+user_61,Microwave,1,1,
+user_62,Refrigerator,3,0,
+user_62,Washing Machine,1,3,5.0
+user_62,Microwave,9,2,3.0
+user_62,TV,13,1,
+user_63,Refrigerator,10,4,
+user_63,Washing Machine,10,4,2.0
+user_63,Microwave,10,0,
+user_63,TV,12,2,
+user_64,Refrigerator,10,3,
+user_64,Microwave,19,4,
+user_65,Washing Machine,11,1,
+user_65,Microwave,16,3,
+user_66,AC,19,0,
+user_66,Refrigerator,8,0,3.0
+user_66,Microwave,14,0,
+user_66,TV,3,1,5.0
+user_67,Microwave,9,3,1.0
+user_67,TV,14,2,5.0
+user_68,AC,1,4,
+user_68,Refrigerator,9,0,
+user_69,AC,9,2,2.0
+user_69,Refrigerator,12,3,
+user_69,Washing Machine,14,4,
+user_69,Microwave,12,0,
+user_69,TV,8,0,
+user_70,Refrigerator,17,4,5.0
+user_70,Microwave,11,0,4.0
+user_70,TV,9,2,
+user_71,AC,13,4,
+user_71,Refrigerator,1,4,
+user_71,Washing Machine,10,1,
+user_71,Microwave,10,1,
+user_71,TV,3,2,
+user_72,AC,16,3,
+user_72,Refrigerator,13,4,5.0
+user_72,Microwave,11,4,2.0
+user_72,TV,13,3,
+user_73,AC,13,3,
+user_73,Washing Machine,14,4,
+user_73,Microwave,11,1,4.0
+user_74,Refrigerator,3,2,
+user_74,Washing Machine,7,2,2.0
+user_74,Microwave,14,3,3.0
+user_75,AC,13,1,3.0
+user_75,Washing Machine,4,4,1.0
+user_75,Microwave,11,4,4.0
+user_75,TV,11,0,
+user_76,AC,11,2,1.0
+user_76,Refrigerator,11,0,
+user_76,Washing Machine,7,1,
+user_76,Microwave,12,0,
+user_76,TV,4,2,
+user_77,AC,10,3,5.0
+user_77,Washing Machine,11,4,
+user_77,Microwave,16,1,4.0
+user_77,TV,8,3,
+user_78,Refrigerator,7,0,5.0
+user_78,Washing Machine,4,2,
+user_78,Microwave,10,1,
+user_78,TV,17,4,
+user_79,TV,9,1,3.0
+user_80,AC,14,2,1.0
+user_80,Refrigerator,3,1,
+user_80,Washing Machine,6,2,
+user_80,Microwave,17,0,5.0
+user_80,TV,4,0,
+user_81,AC,3,3,3.0
+user_81,Refrigerator,8,1,
+user_81,Washing Machine,17,4,
+user_81,TV,11,2,4.0
+user_82,AC,17,1,4.0
+user_82,Refrigerator,16,0,4.0
+user_82,Washing Machine,2,1,5.0
+user_82,TV,15,4,
+user_83,AC,10,1,4.0
+user_83,Refrigerator,3,3,5.0
+user_83,Washing Machine,18,0,
+user_83,Microwave,10,0,2.0
+user_84,AC,14,1,
+user_84,Washing Machine,1,2,1.0
+user_84,Microwave,7,1,
+user_84,TV,1,1,
+user_85,Microwave,18,2,
+user_85,TV,9,2,5.0
+user_86,Refrigerator,14,0,2.0
+user_86,Washing Machine,16,4,
+user_86,Microwave,15,0,5.0
+user_86,TV,2,3,3.0
+user_87,AC,6,2,4.0
+user_87,Refrigerator,13,0,
+user_87,Washing Machine,14,1,3.0
+user_87,TV,17,2,5.0
+user_88,AC,8,2,
+user_88,Refrigerator,2,3,2.0
+user_88,Washing Machine,19,2,
+user_88,Microwave,18,2,
+user_89,AC,3,2,
+user_89,Refrigerator,18,1,1.0
+user_89,Washing Machine,12,0,
+user_89,Microwave,13,4,
+user_89,TV,18,3,1.0
+user_90,AC,11,4,
+user_90,Washing Machine,14,4,4.0
+user_90,TV,9,3,5.0
+user_91,AC,7,1,1.0
+user_91,Washing Machine,1,2,
+user_91,Microwave,13,4,2.0
+user_92,AC,12,2,
+user_92,Refrigerator,13,4,
+user_92,Washing Machine,14,4,
+user_92,TV,2,1,2.0
+user_93,AC,4,3,
+user_93,Refrigerator,10,2,1.0
+user_93,TV,11,2,
+user_94,AC,19,0,1.0
+user_94,Refrigerator,17,0,
+user_94,Microwave,7,3,4.0
+user_94,TV,14,3,
+user_95,AC,9,1,
+user_95,Washing Machine,4,1,3.0
+user_95,Microwave,18,2,4.0
+user_96,AC,8,0,
+user_96,Refrigerator,6,1,4.0
+user_96,Washing Machine,1,2,
+user_96,TV,3,3,5.0
+user_97,AC,8,0,
+user_97,Refrigerator,5,1,
+user_97,Washing Machine,6,2,
+user_97,TV,18,2,
+user_98,AC,14,1,1.0
+user_98,Refrigerator,19,3,5.0
+user_98,TV,2,3,
+user_99,AC,18,1,
+user_99,Washing Machine,1,3,1.0
+user_99,Microwave,18,2,1.0
+user_100,AC,13,3,
+user_100,Refrigerator,12,0,1.0
+user_100,Washing Machine,1,4,3.0
+user_100,Microwave,6,4,4.0
+user_100,TV,4,1,

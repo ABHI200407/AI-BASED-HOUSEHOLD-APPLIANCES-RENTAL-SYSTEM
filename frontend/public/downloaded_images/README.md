@@ -1,0 +1,85 @@
+# 🛋️ Downloaded Furniture Images
+
+**Total Images**: 918
+**Total Size**: 177.3 MB
+**Source**: [Pexels](https://www.pexels.com/) - Free for commercial use
+
+## 📁 Folder Structure
+
+```
+downloaded_images/
+    ├── ac/ (20 images)
+    ├── air_purifier/ (6 images)
+    ├── kitchen/ (20 images)
+    ├── microwave/ (8 images)
+    ├── refrigerator/ (30 images)
+    ├── tv/ (30 images)
+    ├── washing_machine/ (20 images)
+    ├── water_purifier/ (6 images)
+    ├── hero/ (30 images)
+    ├── lifestyle/ (20 images)
+    ├── seasonal/ (15 images)
+    ├── beds/ (64 images)
+    ├── dressing_table/ (15 images)
+    ├── full_room/ (64 images)
+    ├── side_tables/ (15 images)
+    ├── accent/ (15 images)
+    ├── bar_stools/ (8 images)
+    ├── bean_bags/ (8 images)
+    ├── bangalore/ (6 images)
+    ├── chennai/ (6 images)
+    ├── delhi/ (6 images)
+    ├── faridabad/ (4 images)
+    ├── ghaziabad/ (2 images)
+    ├── gurgaon/ (6 images)
+    ├── hosur/ (2 images)
+    ├── hyderabad/ (6 images)
+    ├── mumbai/ (6 images)
+    ├── navi_mumbai/ (2 images)
+    ├── noida/ (4 images)
+    ├── pune/ (6 images)
+    ├── thane/ (2 images)
+    ├── 1bhk/ (24 images)
+    ├── 2bhk/ (18 images)
+    ├── 3bhk/ (15 images)
+    ├── bachelor/ (10 images)
+    ├── crockery_units/ (12 images)
+    ├── dining_chairs/ (15 images)
+    ├── dining_tables/ (36 images)
+    ├── full_room/ (40 images)
+    ├── beds/ (20 images)
+    ├── rooms/ (30 images)
+    ├── study/ (10 images)
+    ├── apartments/ (30 images)
+    ├── bathroom/ (8 images)
+    ├── kitchen/ (20 images)
+    ├── bookshelves/ (15 images)
+    ├── coffee_tables/ (20 images)
+    ├── full_room/ (64 images)
+    ├── recliners/ (20 images)
+    ├── sofas/ (64 images)
+    ├── tv_units/ (20 images)
+  ├── mattress/ (25 images)
+    ├── chairs/ (18 images)
+    ├── conference/ (10 images)
+    ├── desks/ (24 images)
+    ├── sale/ (15 images)
+    ├── customer/ (12 images)
+    ├── delivery/ (15 images)
+    ├── cabinets/ (15 images)
+    ├── shoe_racks/ (8 images)
+    ├── wardrobes/ (30 images)
+    ├── bookshelves/ (15 images)
+    ├── chairs/ (24 images)
+    ├── desks/ (36 images)
+    ├── full_room/ (40 images)
+    ├── console/ (8 images)
+    ├── end_tables/ (8 images)
+    ├── folding/ (6 images)
+```
+
+## 📜 License
+
+All images from [Pexels](https://www.pexels.com/license/).
+✅ Free for personal and commercial use
+✅ No attribution required (but appreciated)

@@ -1,0 +1,105 @@
+/* CreativeEffects.css */
+
+/* Glass‑morphic card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  transition: transform var(--anim-duration-medium) var(--anim-ease-out),
+              box-shadow var(--anim-duration-medium) var(--anim-ease-out);
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Skeleton loader */
+.skeleton {
+  --base:#e2e8f0;
+  --highlight:#f1f5f9;
+  background: var(--base);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+.skeleton::after {
+  content:"";
+  position: absolute;
+  inset:0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, var(--highlight), transparent);
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  to { transform: translateX(100%); }
+}
+
+/* Ambient orbs */
+.orb {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  /* filter: blur(80px); */
+  animation: drift 20s linear infinite;
+  pointer-events: none;
+}
+@keyframes drift {
+  0%   { transform: translate(0,0) rotate(0deg); }
+  33%  { transform: translate(30vw,-10vh) rotate(120deg); }
+  66%  { transform: translate(-20vw,20vh) rotate(240deg); }
+  100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* Scroll progress bar */
+.scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--accent-gradient);
+  z-index: 9999;
+  transition: width var(--anim-duration-short) var(--anim-ease-out);
+}
+
+/* Cyberpunk mode */
+html[data-cyberpunk='true'] {
+  --bg: #0d0d0d;
+  --text: #00ff41;
+  --accent: #00ff41;
+  --accent-gradient: linear-gradient(135deg, #00ff41, #ff00ff);
+  font-family: 'Courier New', monospace;
+  background: var(--bg) url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCI+PHJlY3QgZmlsbD0iI2ZmZiIgd2lkdGg9IjIiIGhlaWdodD0iMjAiIG9wYWNpdHk9IjAuMDUiLz48L3N2Zz4=') repeat;
+  color: var(--text);
+}
+
+/* 3D card flip */
+.card-3d-wrapper {
+  perspective: 1200px;
+}
+.card-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform var(--anim-duration-medium) var(--anim-ease-out);
+}
+.card-3d.is-flipped {
+  transform: rotateY(180deg);
+}
+.card-3d-front,
+.card-3d-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top:0; left:0;
+}
+.card-3d-back {
+  transform: rotateY(180deg);
+  background: var(--surface-dark);
+  color: var(--text);
+}
