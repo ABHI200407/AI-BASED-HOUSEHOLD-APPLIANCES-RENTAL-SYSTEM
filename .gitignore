@@ -1,0 +1,36 @@
+# Environments & Virtualenv
+venv/
+.env
+.venv/
+env/
+
+# Database files & local runtimes
+backend/db.sqlite3
+mongo_data/
+*.sqlite3
+
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Machine Learning models & logs
+*.pkl
+*.log
+
+# Frontend build & dependencies
+frontend/node_modules/
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/lint_output.txt
+
+# Scratch / Temp debug files
+extracted_code.txt
+full_text.txt
+tree_output.txt
+temp.txt
+
+# Other developer's standalone version (isolated on disk, not tracked in this repository)
+RentAI/

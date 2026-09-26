@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import SiteFooter from './components/SiteFooter';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
+import LandingTour from './pages/LandingTour';
 import Catalog from './pages/Catalog';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
@@ -23,6 +24,7 @@ import RoomConfigurator from './pages/RoomConfigurator';
 import InfiniteCanvas, { CanvasIsland } from './components/InfiniteCanvas';
 import AIWorldCanvas from './components/AIWorldCanvas';
 import CommandCenter from './components/CommandCenter';
+import AIChatbot from './components/AIChatbot';
 import AmbientOrbs from './components/AmbientOrbs';
 import ScrollProgress from './components/ScrollProgress';
 import Profile from './pages/Profile';
@@ -31,6 +33,8 @@ import CategoryLanding from './pages/CategoryLanding';
 import MovePlanner from './pages/MovePlanner';
 import Inspiration from './pages/Inspiration';
 import Packages from './pages/Packages';
+import Releases from './pages/Releases';
+import Business from './pages/Business';
 
 function AppShell() {
   const location = useLocation();
@@ -41,8 +45,10 @@ function AppShell() {
       {/* <AmbientOrbs /> */}
       <ScrollProgress />
       <CommandCenter />
+      <AIChatbot />
       {!hideChrome && <Navbar />}
       <Routes>
+        <Route path="/tour" element={<LandingTour />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
@@ -50,6 +56,8 @@ function AppShell() {
         <Route path="/move-planner" element={<MovePlanner />} />
         <Route path="/inspiration" element={<Inspiration />} />
         <Route path="/packages" element={<Packages />} />
+        <Route path="/releases" element={<Releases />} />
+        <Route path="/business" element={<Business />} />
 
         <Route
           path="/category/:name"

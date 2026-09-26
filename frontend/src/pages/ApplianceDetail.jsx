@@ -5,6 +5,7 @@ import api from '../api/axios';
 import { AuthContext } from '../context/AuthContext';
 import { CartContext } from '../context/CartContext';
 import { resolveMediaUrl } from '../utils/media';
+import ItemInspector from '../components/ItemInspector';
 
 export default function ApplianceDetail() {
   const { id } = useParams();
@@ -115,25 +116,9 @@ export default function ApplianceDetail() {
 
       <div className="rv-split-layout">
         <section>
-          <div className="rv-detail-hero">
-            <img src={mainImage} alt={appliance.name} />
+          <div className="rv-detail-hero" style={{ padding: 0, overflow: 'visible', background: 'transparent' }}>
+            <ItemInspector />
           </div>
-
-          {images.length > 1 && (
-            <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto', paddingBottom: '1rem', marginBottom: '2rem' }}>
-              {images.map((img, index) => (
-                <button
-                  key={`${img}-${index}`}
-                  onClick={() => setActiveImage(img)}
-                  style={{
-                    width: '80px', height: '80px', borderRadius: 'var(--rv-radius-sm)', border: `2px solid ${activeImage === img ? 'var(--rv-color-accent)' : 'transparent'}`, overflow: 'hidden', padding: 0, cursor: 'pointer', flexShrink: 0
-                  }}
-                >
-                  <img src={img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </button>
-              ))}
-            </div>
-          )}
 
           <div style={{ marginBottom: '3rem' }}>
             <span className="rv-section-label"><ShieldCheck size={14} style={{display:'inline', verticalAlign:'middle'}}/> Description</span>

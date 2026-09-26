@@ -17,12 +17,12 @@ import {
   Sparkles,
   WandSparkles,
 } from 'lucide-react';
-import ProductCard from '../components/ProductCard';
-import SceneWalkthrough from '../components/SceneWalkthrough';
+import Hero3DView from '../components/Hero3DView';
+import StorySphere from '../components/StorySphere';
+import AIRecommendations from '../components/AIRecommendations';
 import { CityContext } from '../context/CityContext';
 import {
   cityOptions,
-  featuredProducts,
   inspirations,
   rentalPackages,
   roomCollections,
@@ -37,14 +37,13 @@ const rise = {
 export default function Home() {
   const navigate = useNavigate();
   const { city, changeCity } = React.useContext(CityContext);
-
+  const [homeType, setHomeType] = useState('A room or two');
+  const [moveDate, setMoveDate] = useState('');
 
   return (
     <main className="rv-home">
       <section className="rv-home-hero">
-        <div className="rv-home-hero__image" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
-          <SceneWalkthrough className="hero-scene" />
-        </div>
+        <Hero3DView />
         <div className="rv-home-hero__veil" style={{ zIndex: 1 }} />
         <div className="rv-home-hero__orb rv-home-hero__orb--one" style={{ zIndex: 1 }} />
         <div className="rv-home-hero__orb rv-home-hero__orb--two" style={{ zIndex: 1 }} />
@@ -128,24 +127,14 @@ export default function Home() {
                 <span>{room.eyebrow}</span>
                 <h3>{room.title}</h3>
                 <p>{room.copy}</p>
-                <Link to={`/catalog`}>Explore the room <ArrowDownRight size={18} /></Link>
+                <Link to={`/catalog?category=${room.title.toLowerCase().replace(' ', '-')}`}>Explore the room <ArrowDownRight size={18} /></Link>
               </div>
             </motion.article>
           ))}
         </div>
       </section>
 
-      <section className="rv-section rv-products-section">
-        <div className="rv-shell">
-          <div className="rv-section-heading rv-section-heading--products">
-            <div><span className="rv-section-label">The weekly edit</span><h2>Good objects.<br />No long goodbye.</h2></div>
-            <Link to="/catalog" className="rv-text-link">Shop everything <ArrowRight size={17} /></Link>
-          </div>
-          <div className="rv-product-rail">
-            {featuredProducts.slice(0, 4).map((product) => <ProductCard key={product.id} product={product} compact />)}
-          </div>
-        </div>
-      </section>
+      <AIRecommendations />
 
       <section className="rv-section rv-shell rv-package-section">
         <div className="rv-package-heading">
@@ -184,23 +173,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="rv-section rv-shell rv-journal-section">
-        <div className="rv-section-heading"><div><span className="rv-section-label">The renter&apos;s journal</span><h2>Life, arranged.</h2></div><Link to="/inspiration" className="rv-text-link">See all stories <ArrowRight size={17} /></Link></div>
-        <div className="rv-journal-grid">
-          {inspirations.slice(0, 3).map((story, index) => (
-            <article key={story.title} className={`rv-journal-card rv-journal-card--${index + 1}`}>
-              <img src={story.image} alt="" />
-              <div><span>{story.category}</span><h3>{story.title}</h3><p>{story.copy}</p><Link to="/inspiration">Read the story <ArrowRight size={16} /></Link></div>
-            </article>
-          ))}
-        </div>
+      <section className="rv-shell">
+        <StorySphere />
       </section>
 
       <section className="rv-cta-band">
         <div className="rv-shell rv-cta-band__inner">
           <div><span className="rv-section-label">Rentova for business</span><h2>Spaces at scale.<br />Still personal.</h2></div>
           <p>From co-living to offices, we make full-space setup easier to plan, manage, and adapt.</p>
-          <Link to="/catalog" className="rv-button rv-button--light">Explore business rentals <ArrowRight size={18} /></Link>
+          <Link to="/business" className="rv-button rv-button--light">Explore business rentals <ArrowRight size={18} /></Link>
         </div>
       </section>
     </main>

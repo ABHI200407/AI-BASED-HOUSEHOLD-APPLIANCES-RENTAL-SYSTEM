@@ -36,11 +36,10 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  if (location.pathname === '/login' || location.pathname === '/register') return null;
-
   const navItems = useMemo(() => {
     if (!user) return [
       { to: '/', label: 'Home' },
+      { to: '/releases', label: 'New Drops' },
       { to: '/catalog', label: 'Browse' },
       { to: '#how-it-works', label: 'How it Works' },
     ];
@@ -56,6 +55,7 @@ export default function Navbar() {
     ];
     return [
       { to: '/', label: 'Home' },
+      { to: '/releases', label: 'New Drops' },
       { to: '/catalog', label: 'Browse' },
       { to: '/my-bookings', label: 'Bookings' },
       { to: '/installations', label: 'Installations' },
@@ -70,6 +70,8 @@ export default function Navbar() {
       setSearchQuery('');
     }
   };
+
+  if (location.pathname === '/login' || location.pathname === '/register') return null;
 
   return (
     <>

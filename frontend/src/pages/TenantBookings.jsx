@@ -71,6 +71,11 @@ export default function TenantBookings() {
                   <div style={{ padding: '0.5rem 1rem', background: 'var(--rv-color-primary)', color: '#fff', borderRadius: '99px', fontWeight: 700 }}>
                     {formatINR(booking.total_amount)}
                   </div>
+                  {booking.status !== 'cancelled' && booking.status !== 'requested' && (
+                    <Link to="/installations" className="rv-button rv-button--signal" style={{ fontSize: '0.75rem', padding: '0.25rem 0.75rem', marginTop: '0.5rem' }}>
+                      Track Delivery
+                    </Link>
+                  )}
                   {booking.status !== 'cancelled' && (
                     <Link to="/service-requests" className="rv-button rv-button--light" style={{ fontSize: '0.75rem', padding: '0.25rem 0.75rem', marginTop: '0.5rem' }}>
                       Request Service
@@ -89,12 +94,12 @@ export default function TenantBookings() {
                   <span>{formatDate(booking.end_date)}</span>
                 </div>
                 <div className="rv-booking-card__spec">
-                  <label><MapPin size={14} /> Delivery</label>
-                  <span>{booking.delivery_city || 'City delivery enabled'}</span>
+                  <label><ShieldCheck size={14} /> Rental Plan</label>
+                  <span>{booking.tenure ? `${booking.tenure} Months` : 'Flexible tenure'}</span>
                 </div>
                 <div className="rv-booking-card__spec">
-                  <label><ShieldCheck size={14} /> Plan</label>
-                  <span>{booking.tenure || 'Flexible tenure'}</span>
+                  <label><Calendar size={14} /> Booking Date</label>
+                  <span>{formatDate(booking.created_at || new Date().toISOString())}</span>
                 </div>
               </div>
 

@@ -38,6 +38,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from core.views_chat import chat_with_ollama
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -48,6 +49,7 @@ urlpatterns = [
     path('api/recommend/', include('ml_recommend.urls')),
     path('api/bi/', include('ml_forecast.urls')),
     path('api/churn/', include('ml_churn.urls')),
+    path('api/chat/', chat_with_ollama, name='chat_with_ollama'),
 ]
 
 if settings.DEBUG:

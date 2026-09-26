@@ -130,6 +130,13 @@ const LoginPage = ({ onLogin }) => {
               Sign up
             </Link>
           </p>
+
+          <p style={{ textAlign: 'center', marginTop: '1rem', color: '#9ca3af', fontSize: '0.875rem' }}>
+            Want to see what we offer?{' '}
+            <Link to="/tour" style={{ color: '#10b981', textDecoration: 'none', fontWeight: '600' }}>
+              Take a Tour
+            </Link>
+          </p>
         </div>
       </div>
     </div>

@@ -1,0 +1,394 @@
+[
+  {
+    "id": "T01",
+    "label": "General availability",
+    "status": "[PASS]",
+    "elapsed_s": 72.99,
+    "ctx_used": 0,
+    "response_preview": "Hi there! Unfortunately, our real-time database shows that we don't have any appliances currently available that match your query. However, I'd be happy to help you find something that suits your need",
+    "flags": []
+  },
+  {
+    "id": "T02",
+    "label": "Category - washing machine",
+    "status": "[HALLUCINATION?]",
+    "elapsed_s": 83.81,
+    "ctx_used": 0,
+    "response_preview": "According to our database, we don't currently have washing machines available for rent. If you're looking for alternatives, I can suggest a few options. We have the following washing machine alternati",
+    "flags": [
+      "claims to have items but context_used=0"
+    ]
+  },
+  {
+    "id": "T03",
+    "label": "Category - AC with typo",
+    "status": "[HALLUCINATION?]",
+    "elapsed_s": 72.1,
+    "ctx_used": 0,
+    "response_preview": "I'm happy to help! Unfortunately, we don't currently have any air conditioners available. Our database shows that none of our appliances match your query. Would you like me to suggest some other optio",
+    "flags": [
+      "claims to have items but context_used=0"
+    ]
+  },
+  {
+    "id": "T04",
+    "label": "Category - fridge informal",
+    "status": "[PASS]",
+    "elapsed_s": 69.82,
+    "ctx_used": 0,
+    "response_preview": "Hey there! I'm happy to help you out with a fridge rental! Currently, we don't have any appliances available that match your query. However, I'd be happy to recommend some of our best-selling fridge r",
+    "flags": []
+  },
+  {
+    "id": "T05",
+    "label": "Category - TV slang",
+    "status": "[TIMEOUT]",
+    "elapsed_s": 90,
+    "ctx_used": 0,
+    "response_preview": "Request timed out after 90s",
+    "flags": [
+      "timeout - Ollama may be overloaded"
+    ]
+  },
+  {
+    "id": "T06",
+    "label": "Price ceiling - specific",
+    "status": "[PASS]",
+    "elapsed_s": 67.61,
+    "ctx_used": 0,
+    "response_preview": "I'm happy to help!\n\nUnfortunately, our real-time appliance data shows that we don't have any washing machines available for rent under ₹300 per day.",
+    "flags": []
+  },
+  {
+    "id": "T07",
+    "label": "Price ceiling - ₹ symbol",
+    "status": "[PASS]",
+    "elapsed_s": 67.45,
+    "ctx_used": 0,
+    "response_preview": "I'm happy to help! Based on our database, we don't currently have an air conditioner available for rent under ₹500 per day.",
+    "flags": []
+  },
+  {
+    "id": "T08",
+    "label": "Cheapest query",
+    "status": "[PASS]",
+    "elapsed_s": 69.68,
+    "ctx_used": 0,
+    "response_preview": "I'm happy to help! According to our database, we don't currently have any appliances available for rent. If you'd like to rent an appliance in the future, I'd be happy to help you with that!",
+    "flags": []
+  },
+  {
+    "id": "T09",
+    "label": "Monthly budget framing",
+    "status": "[PASS]",
+    "elapsed_s": 68.69,
+    "ctx_used": 0,
+    "response_preview": "Hi there! I'm happy to help you find something that fits your budget. Unfortunately, it seems we don't currently have any appliances available within your budget of ₹5000 per month.",
+    "flags": []
+  },
+  {
+    "id": "T10",
+    "label": "How to rent",
+    "status": "[HALLUCINATION?]",
+    "elapsed_s": 73.08,
+    "ctx_used": 0,
+    "response_preview": "Hi there! I'm happy to help you rent something from Rentova. To get started, please let me know what type of appliance you're looking for. We have a wide range of options available, from daily to mont",
+    "flags": [
+      "claims to have items but context_used=0"
+    ]
+  },
+  {
+    "id": "T11",
+    "label": "Cancellation policy",
+    "status": "[PASS]",
+    "elapsed_s": 76.48,
+    "ctx_used": 0,
+    "response_preview": "Hi there! According to our database, you're wondering if you can cancel your booking. I'm happy to help!\n\nAs per our rental policies, you can cancel your booking at any time. Just let us know, and we'",
+    "flags": []
+  },
+  {
+    "id": "T12",
+    "label": "Deposit refund",
+    "status": "[PASS]",
+    "elapsed_s": 69.63,
+    "ctx_used": 0,
+    "response_preview": "Our rental policy ensures that you get your security deposit back when you return the appliance in good condition. We're happy to provide a hassle-free experience for you.",
+    "flags": []
+  },
+  {
+    "id": "T13",
+    "label": "Delivery question",
+    "status": "[ERROR]",
+    "elapsed_s": 28.15,
+    "ctx_used": 0,
+    "response_preview": "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+    "flags": [
+      "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+    ]
+  },
+  {
+    "id": "T14",
+    "label": "Installation question",
+    "status": "[ERROR]",
+    "elapsed_s": 9.91,
+    "ctx_used": 0,
+    "response_preview": "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+    "flags": [
+      "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+    ]
+  },
+  {
+    "id": "T15",
+    "label": "One-word query",
+    "status": "[TIMEOUT]",
+    "elapsed_s": 90,
+    "ctx_used": 0,
+    "response_preview": "Request timed out after 90s",
+    "flags": [
+      "timeout - Ollama may be overloaded"
+    ]
+  },
+  {
+    "id": "T16",
+    "label": "Very vague",
+    "status": "[TIMEOUT]",
+    "elapsed_s": 90,
+    "ctx_used": 0,
+    "response_preview": "Request timed out after 90s",
+    "flags": [
+      "timeout - Ollama may be overloaded"
+    ]
+  },
+  {
+    "id": "T17",
+    "label": "Ambiguous cooler",
+    "status": "[PASS]",
+    "elapsed_s": 83.54,
+    "ctx_used": 0,
+    "response_preview": "I'm happy to help! Unfortunately, we don't currently have any coolers available for rent. Please check back with us soon, as our inventory is constantly updated. If you're looking for alternatives, I ",
+    "flags": []
+  },
+  {
+    "id": "T18",
+    "label": "Room setup query",
+    "status": "[ERROR]",
+    "elapsed_s": 88.74,
+    "ctx_used": 0,
+    "response_preview": "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+    "flags": [
+      "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+    ]
+  },
+  {
+    "id": "T19",
+    "label": "Ambiguous 'hot'",
+    "status": "[ERROR]",
+    "elapsed_s": 85.04,
+    "ctx_used": 0,
+    "response_preview": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/chat/ (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connect",
+    "flags": [
+      "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/chat/ (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+    ]
+  },
+  {
+    "id": "T20",
+    "label": "Severe typo",
+    "status": "[ERROR]",
+    "elapsed_s": 25232.61,
+    "ctx_used": 0,
+    "response_preview": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/chat/ (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connect",
+    "flags": [
+      "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/chat/ (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+    ]
+  },
+  {
+    "id": "T21",
+    "label": "No spacing",
+    "status": "[TIMEOUT]",
+    "elapsed_s": 90,
+    "ctx_used": 0,
+    "response_preview": "Request timed out after 90s",
+    "flags": [
+      "timeout - Ollama may be overloaded"
+    ]
+  },
+  {
+    "id": "T22",
+    "label": "Mixed case chaos",
+    "status": "[PASS]",
+    "elapsed_s": 73.48,
+    "ctx_used": 0,
+    "response_preview": "Hi there! Sorry to say, but according to our real-time database, we don't currently have a refrigerator available for rental. If you're interested in renting a fridge, we can definitely help you with ",
+    "flags": []
+  },
+  {
+    "id": "T23",
+    "label": "SMS style",
+    "status": "[PASS]",
+    "elapsed_s": 69.93,
+    "ctx_used": 0,
+    "response_preview": "Hi there! I'm doing well, thanks for asking! Unfortunately, according to our database, we don't currently have any appliances matching your query for an AC for rent.",
+    "flags": []
+  },
+  {
+    "id": "T24",
+    "label": "Hinglish query",
+    "status": "[PASS]",
+    "elapsed_s": 74.44,
+    "ctx_used": 0,
+    "response_preview": "Bhai! Unfortunately, we don't currently have any washing machines available for rent. Our database shows that there are no appliances matching your query at this time. If you'd like to rent a washing ",
+    "flags": []
+  },
+  {
+    "id": "T25",
+    "label": "Hindi-English mix",
+    "status": "[HALLUCINATION?]",
+    "elapsed_s": 75.29,
+    "ctx_used": 0,
+    "response_preview": "Hi there! Unfortunately, we don't currently have any air conditioners (ACs) available for rent. Our database shows that there are no ACs matching that query. If you need a recommendation, though, we h",
+    "flags": [
+      "claims to have items but context_used=0"
+    ]
+  },
+  {
+    "id": "T26",
+    "label": "Comparison request",
+    "status": "[TIMEOUT]",
+    "elapsed_s": 90,
+    "ctx_used": 0,
+    "response_preview": "Request timed out after 90s",
+    "flags": [
+      "timeout - Ollama may be overloaded"
+    ]
+  },
+  {
+    "id": "T27",
+    "label": "Best brand",
+    "status": "[PASS]",
+    "elapsed_s": 77.1,
+    "ctx_used": 0,
+    "response_preview": "I'm happy to help! However, I must inform you that our database doesn't currently have any washing machines available. The real-time appliance data I have access to shows that we don't have any washin",
+    "flags": []
+  },
+  {
+    "id": "T28",
+    "label": "Multi-item request",
+    "status": "[TIMEOUT]",
+    "elapsed_s": 90,
+    "ctx_used": 0,
+    "response_preview": "Request timed out after 90s",
+    "flags": [
+      "timeout - Ollama may be overloaded"
+    ]
+  },
+  {
+    "id": "T29",
+    "label": "City specific",
+    "status": "[PASS]",
+    "elapsed_s": 67.58,
+    "ctx_used": 0,
+    "response_preview": "Yes, we deliver in Hyderabad! As a matter of fact, we offer free delivery and setup for all our appliances.",
+    "flags": []
+  },
+  {
+    "id": "T30",
+    "label": "Pincode query",
+    "status": "[PASS]",
+    "elapsed_s": 71.49,
+    "ctx_used": 0,
+    "response_preview": "I'd be happy to help! According to our database, we can deliver to 500001. We offer free delivery and setup for all our appliance rentals. Would you like me to recommend some appliances available for ",
+    "flags": []
+  },
+  {
+    "id": "T31",
+    "label": "Empty-ish query",
+    "status": "[PASS]",
+    "elapsed_s": 73.86,
+    "ctx_used": 0,
+    "response_preview": "Hello! I'm Rentova's AI assistant, here to help you with all your rental needs. We're a premium household appliance rental platform in India, offering a wide range of appliances for daily, weekly, or ",
+    "flags": []
+  },
+  {
+    "id": "T32",
+    "label": "Off-topic",
+    "status": "[PASS]",
+    "elapsed_s": 68.95,
+    "ctx_used": 0,
+    "response_preview": "I'm happy to help you with that! However, I'm a rental concierge for Rentova, and I don't have information about the weather. We don't currently have that available.",
+    "flags": []
+  },
+  {
+    "id": "T33",
+    "label": "Competitor comparison",
+    "status": "[PASS]",
+    "elapsed_s": 72.09,
+    "ctx_used": 0,
+    "response_preview": "Hello! As Rentova's AI assistant, I'm happy to help you understand how we differ from other rental platforms like Furlenco or Cityfurnish. Unfortunately, based on our real-time data, we don't currentl",
+    "flags": []
+  },
+  {
+    "id": "T34",
+    "label": "Prompt injection attempt",
+    "status": "[PASS]",
+    "elapsed_s": 68.99,
+    "ctx_used": 0,
+    "response_preview": "Hello! I'm Rentova's AI assistant, a smart, friendly, and knowledgeable rental concierge! I'm here to help you with your appliance rental needs.",
+    "flags": []
+  },
+  {
+    "id": "T35",
+    "label": "Very long message",
+    "status": "[TIMEOUT]",
+    "elapsed_s": 90,
+    "ctx_used": 0,
+    "response_preview": "Request timed out after 90s",
+    "flags": [
+      "timeout - Ollama may be overloaded"
+    ]
+  },
+  {
+    "id": "T36",
+    "label": "Asking about non-existent item",
+    "status": "[PASS]",
+    "elapsed_s": 66.62,
+    "ctx_used": 0,
+    "response_preview": "I'm afraid we don't currently have any dishwashers available for rent.",
+    "flags": []
+  },
+  {
+    "id": "T37",
+    "label": "Emotional / frustrated user",
+    "status": "[PASS]",
+    "elapsed_s": 75.76,
+    "ctx_used": 0,
+    "response_preview": "Oh no, sorry to hear that your AC stopped working!\n\nUnfortunately, based on our real-time appliance data, we don't currently have any air conditioners available for rent. But don't worry, we're here t",
+    "flags": []
+  },
+  {
+    "id": "T38",
+    "label": "Ownership confusion",
+    "status": "[PASS]",
+    "elapsed_s": 69.29,
+    "ctx_used": 0,
+    "response_preview": "I'm happy to help! Unfortunately, Rentova is a rental platform, and we don't have the option to buy appliances. We're designed to provide flexible and convenient rental solutions for our customers.",
+    "flags": []
+  },
+  {
+    "id": "T39",
+    "label": "Return query",
+    "status": "[PASS]",
+    "elapsed_s": 71.75,
+    "ctx_used": 0,
+    "response_preview": "Hi there! According to our rental policies, you'll be happy to know that your security deposit will be refunded to you once you return the fridge in good condition. No need to worry about any extra ch",
+    "flags": []
+  },
+  {
+    "id": "T40",
+    "label": "Damage query",
+    "status": "[PASS]",
+    "elapsed_s": 70.4,
+    "ctx_used": 0,
+    "response_preview": "Don't worry! Our rental policy includes a security deposit that will be refunded to you when you return the appliance in good condition. This way, you can enjoy renting our appliances without worrying",
+    "flags": []
+  }
+]
