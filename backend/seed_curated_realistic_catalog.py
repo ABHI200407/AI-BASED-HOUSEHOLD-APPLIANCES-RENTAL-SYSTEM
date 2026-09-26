@@ -610,17 +610,32 @@ PRODUCTS = [
     }
 ]
 
+def ensure_demo_users():
+    demo_users = [
+        {'email': 'admin@rentai.com', 'name': 'Platform Admin', 'role': 'admin', 'pass': 'admin123'},
+        {'email': 'owner@rentai.com', 'name': 'Appliance Fleet Owner', 'role': 'owner', 'pass': 'owner123'},
+        {'email': 'customer@rentai.com', 'name': 'Aditi Sharma', 'role': 'tenant', 'pass': 'customer123'},
+        {'email': 'partner@rentova.ai', 'name': 'Rentova Asset Host', 'role': 'owner', 'pass': 'password123'},
+    ]
+    owner_user = None
+    for u in demo_users:
+        user_obj = User.objects(email=u['email']).first()
+        if not user_obj:
+            user_obj = User(
+                email=u['email'],
+                full_name=u['name'],
+                role=u['role'],
+                is_active=True
+            )
+        user_obj.set_password(u['pass'])
+        user_obj.save()
+        if u['role'] == 'owner' and not owner_user:
+            owner_user = user_obj
+    return owner_user
+
 def run():
     print("Beginning curated catalog re-seed...")
-    owner = User.objects(role='owner').first()
-    if not owner:
-        owner = User(
-            email='partner@rentova.ai',
-            full_name='Rentova Asset Host',
-            password='password123',
-            role='owner'
-        )
-        owner.save()
+    owner = ensure_demo_users()
 
     # Clear old robotic data
     deleted = Appliance.objects.delete()

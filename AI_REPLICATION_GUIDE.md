@@ -47,7 +47,10 @@ Here is the architectural context and non-negotiable rules for this project:
      - Delivery & Installations (`http://localhost:5173/installations`) -> verify real delivery photos and smooth scrolling to tracking.
      - Owner Dashboard (`http://localhost:5173/owner`) -> verify fleet analytics, health scores, and ROI metrics.
      - Admin Dashboard (`http://localhost:5173/admin`) -> verify platform operations.
-     - AI Assistant / Chatbot -> send a message like "Recommend a 1.5 ton inverter AC for a master bedroom" and verify grounding in the database catalog.
+5. DEMO USER ACCOUNTS (Automatically created by seed script):
+   - Admin: `admin@rentai.com` / `admin123`
+   - Owner: `owner@rentai.com` / `owner123`
+   - Customer: `customer@rentai.com` / `customer123`
 
 Please verify the system status and report back confirming each component is green.
 ```
