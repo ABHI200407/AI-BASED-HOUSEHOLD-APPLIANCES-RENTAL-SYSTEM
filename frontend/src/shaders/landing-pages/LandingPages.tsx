@@ -1003,8 +1003,8 @@ function sylvaHeroChromeStyle(tone: SylvaHeroChromeTone) {
   margin: calc(-31 * var(--u)) 0 0 calc(-102 * var(--u));
   border-radius: 999px;
   pointer-events: none;
-  -webkit-backdrop-filter: blur(calc(13 * var(--u))) saturate(1.16);
-  backdrop-filter: blur(calc(13 * var(--u))) saturate(1.16);
+
+  
   background: rgba(${tone.plate}, 0.22);
 }
 
@@ -1018,8 +1018,8 @@ function sylvaHeroChromeStyle(tone: SylvaHeroChromeTone) {
   height: calc(90 * var(--u));
   margin: calc(-45 * var(--u)) 0 0 calc(-45 * var(--u));
   border-radius: 50%;
-  -webkit-backdrop-filter: blur(calc(13 * var(--u))) saturate(1.16);
-  backdrop-filter: blur(calc(13 * var(--u))) saturate(1.16);
+
+  
   background: rgba(${tone.plate}, 0.22);
 }
 </style>`;

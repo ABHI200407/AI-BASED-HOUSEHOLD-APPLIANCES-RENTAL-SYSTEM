@@ -22,6 +22,9 @@ export default function SiteFooter() {
             <h4>Explore</h4>
             <Link to="/">Launch page</Link>
             <Link to="/catalog">Catalog</Link>
+            <Link to="/financials">Financials &amp; Calculator</Link>
+            <Link to="/tour">Take the Tour</Link>
+            <Link to="/business">Rentova for Business</Link>
             <Link to="/my-bookings">My bookings</Link>
             <Link to="/owner">Owner dashboard</Link>
           </div>

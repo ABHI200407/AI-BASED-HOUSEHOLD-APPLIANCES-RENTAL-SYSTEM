@@ -22,7 +22,7 @@ export default function TimeSlider() {
       display: 'flex',
       flexDirection: 'column',
       gap: '8px',
-      backdropFilter: 'blur(10px)',
+      
       zIndex: 100
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px' }}>

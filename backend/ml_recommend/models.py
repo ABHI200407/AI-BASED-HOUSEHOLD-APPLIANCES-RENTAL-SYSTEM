@@ -7,7 +7,7 @@ class RecommendationLog(Document):
     tenant_id = ReferenceField(User, required=True)
     appliance_id = ReferenceField(Appliance, required=True)
     score = FloatField()
-    method = StringField(choices=('content_based', 'collaborative'))
+    method = StringField(choices=('content_based', 'collaborative', 'hybrid'), default='collaborative')
     generated_at = DateTimeField(default=datetime.utcnow)
 
     meta = {

@@ -1,20 +1,18 @@
 import React from 'react';
-import ClothReveal from '../components/ClothReveal';
 import { Sparkles, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Releases() {
   return (
-    <ClothReveal>
-      <main style={{ 
-        backgroundColor: '#ffffff', 
-        color: '#000000', 
-        fontFamily: 'Inter, Helvetica, sans-serif',
-        paddingTop: '8rem',
-        paddingBottom: '8rem',
-        minHeight: '100vh',
-        overflowX: 'hidden'
-      }}>
+    <main style={{ 
+      backgroundColor: '#ffffff', 
+      color: '#000000', 
+      fontFamily: 'Inter, Helvetica, sans-serif',
+      paddingTop: '6.5rem',
+      paddingBottom: '8rem',
+      minHeight: '100vh',
+      overflowX: 'hidden'
+    }}>
         
         {/* Modular Grid Container */}
         <div style={{ 
@@ -152,6 +150,5 @@ export default function Releases() {
 
         </div>
       </main>
-    </ClothReveal>
   );
 }

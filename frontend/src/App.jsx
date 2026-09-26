@@ -34,11 +34,15 @@ import MovePlanner from './pages/MovePlanner';
 import Inspiration from './pages/Inspiration';
 import Packages from './pages/Packages';
 import Releases from './pages/Releases';
+import Journal from './pages/Journal';
+import NewDrops from './pages/NewDrops';
 import Business from './pages/Business';
+import KYC from './pages/KYC';
+import FinancialCalculator from './pages/FinancialCalculator';
 
 function AppShell() {
   const location = useLocation();
-  const hideChrome = location.pathname === '/login' || location.pathname === '/register';
+  const hideChrome = location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/tour' || location.pathname === '/admin' || location.pathname.startsWith('/owner');
 
   return (
     <>
@@ -56,8 +60,12 @@ function AppShell() {
         <Route path="/move-planner" element={<MovePlanner />} />
         <Route path="/inspiration" element={<Inspiration />} />
         <Route path="/packages" element={<Packages />} />
-        <Route path="/releases" element={<Releases />} />
+        <Route path="/new-drops" element={<NewDrops />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="/releases" element={<Journal />} />
         <Route path="/business" element={<Business />} />
+        <Route path="/financials" element={<FinancialCalculator />} />
+        <Route path="/calculator" element={<FinancialCalculator />} />
 
         <Route
           path="/category/:name"
@@ -87,6 +95,15 @@ function AppShell() {
           element={
             <ProtectedRoute allowedRoles={['tenant']}>
               <Checkout />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/kyc"
+          element={
+            <ProtectedRoute allowedRoles={['tenant']}>
+              <KYC />
             </ProtectedRoute>
           }
         />

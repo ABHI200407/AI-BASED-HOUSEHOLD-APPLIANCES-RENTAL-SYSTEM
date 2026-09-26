@@ -9,6 +9,9 @@ class User(Document):
     role = StringField(choices=('admin', 'owner', 'tenant'), required=True)
     phone = StringField()
     address = StringField()
+    kyc_status = StringField(choices=('pending', 'submitted', 'verified', 'rejected'), default='pending')
+    kyc_id_type = StringField(default='')
+    kyc_id_number = StringField(default='')
     is_active = BooleanField(default=True)
     date_joined = DateTimeField(default=datetime.utcnow)
 

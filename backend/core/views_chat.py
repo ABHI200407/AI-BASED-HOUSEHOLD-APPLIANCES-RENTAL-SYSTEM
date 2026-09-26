@@ -1,5 +1,7 @@
 import requests
 import re
+import json
+from django.http import StreamingHttpResponse
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -7,8 +9,31 @@ from appliances.models import Appliance
 from bookings.models import Booking
 
 OLLAMA_API_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "llama3"
+OLLAMA_TAGS_URL = "http://localhost:11434/api/tags"
+DEFAULT_MODEL = "qwen2.5:0.5b"
 
+def get_best_available_model():
+    """
+    Dynamically discover installed Ollama models, prioritizing lightweight
+    models that run smoothly on CPU within available RAM.
+    """
+    try:
+        res = requests.get(OLLAMA_TAGS_URL, timeout=2)
+        if res.status_code == 200:
+            installed = [m.get("name") for m in res.json().get("models", [])]
+            for candidate in ["qwen2.5:0.5b", "llama3.2:1b", "rentai-llm", "llama3.2:latest", "llama3.2", "qwen2.5:1.5b", "llama3:latest", "llama3"]:
+                if candidate in installed:
+                    return candidate
+                for m in installed:
+                    if m.startswith(candidate):
+                        return m
+            if installed:
+                return installed[0]
+    except Exception:
+        pass
+    return DEFAULT_MODEL
+
+from mongoengine.queryset.visitor import Q
 
 def fetch_relevant_appliances(user_message: str):
     """
@@ -18,23 +43,36 @@ def fetch_relevant_appliances(user_message: str):
     """
     message_lower = user_message.lower()
 
-    # --- Detect intent keywords ---
     CATEGORY_KEYWORDS = {
         'AC': ['ac', 'air condition', 'air-condition', 'cooling', 'cool'],
-        'Refrigerator': ['fridge', 'refrigerator', 'freeze', 'cooler'],
-        'Washing Machine': ['washing', 'washer', 'laundry', 'wash machine'],
-        'TV': ['tv', 'television', 'display', 'screen'],
-        'Microwave': ['microwave', 'oven', 'microwave oven'],
+        'Refrigerator': ['fridge', 'refrigerator', 'freeze', 'freezer'],
+        'Washing Machine': ['washing', 'washer', 'laundry'],
+        'TV': ['tv', 'television', 'display', 'screen', 'led', '4k'],
+        'Microwave': ['microwave', 'oven'],
+        'Water Purifier': ['purifier', 'water purifier', 'ro', 'kent'],
+        'Air Purifier': ['air purifier', 'hepa', 'dyson'],
         'Geyser': ['geyser', 'water heater', 'hot water'],
-        'Fan': ['fan', 'ceiling fan'],
-        'Laptop': ['laptop', 'computer', 'notebook'],
+        'Kitchen': ['stove', 'gas stove', 'mixer', 'grinder', 'kitchen'],
+        'Sofa': ['sofa', 'couch', 'sectional', 'loveseat', 'seating'],
+        'Living Room': ['living room', 'coffee table', 'center table', 'tv unit', 'media console'],
+        'Bed': ['bed', 'bedroom', 'mattress', 'king bed', 'queen bed'],
+        'Storage': ['wardrobe', 'storage', 'closet', 'almirah'],
+        'Dining': ['dining', 'dining table', 'dining chairs'],
+        'Workstation': ['desk', 'standing desk', 'chair', 'ergonomic', 'office', 'workstation', 'wfh'],
+        'Packages': ['package', 'packages', 'combo', '1 bhk', '1bhk', '2 bhk', '2bhk', 'suite'],
     }
 
-    # Find matching categories
+    # Find matching categories and terms
     target_categories = []
+    matched_terms = []
     for category, kw_list in CATEGORY_KEYWORDS.items():
-        if any(kw in message_lower for kw in kw_list):
-            target_categories.append(category)
+        for kw in kw_list:
+            # Use word boundaries so 'ac' does not match 'machine'
+            pattern = r'\b' + re.escape(kw) + r'\b'
+            if re.search(pattern, message_lower):
+                if category not in target_categories:
+                    target_categories.append(category)
+                matched_terms.append(kw)
 
     # Also detect price queries
     price_ceiling = None
@@ -44,8 +82,13 @@ def fetch_relevant_appliances(user_message: str):
 
     # Build query
     try:
-        if target_categories:
-            qs = Appliance.objects(category__in=target_categories, available=True)
+        if target_categories or matched_terms:
+            query_filter = Q(category__in=target_categories)
+            for term in matched_terms[:3]:
+                query_filter = query_filter | Q(name__icontains=term) | Q(category__icontains=term)
+            qs = Appliance.objects(query_filter, available=True)
+            if qs.count() == 0:
+                qs = Appliance.objects(available=True)
         else:
             # No specific category — return a broad sample of available appliances
             qs = Appliance.objects(available=True)
@@ -53,28 +96,24 @@ def fetch_relevant_appliances(user_message: str):
         if price_ceiling:
             qs = qs.filter(price_per_day__lte=price_ceiling)
 
-        appliances = list(qs.limit(8))
+        appliances = list(qs.limit(3))
     except Exception:
-        appliances = []
+        try:
+            appliances = list(Appliance.objects(available=True).limit(3))
+        except Exception:
+            appliances = []
 
     return appliances
 
 
 def build_context_block(appliances):
-    """Convert queried appliances into a structured text block for the LLM prompt."""
+    """Convert queried appliances into a compact text block for the LLM prompt."""
     if not appliances:
-        return "No appliances are currently available matching that query."
+        return "No matching inventory currently available."
 
     lines = []
     for a in appliances:
-        line = (
-            f"- {a.name} ({a.brand or 'Brand N/A'}) | Category: {a.category} | "
-            f"₹{a.price_per_day}/day | Monthly: ₹{a.monthly_rent} | "
-            f"Deposit: ₹{a.deposit} | Location: {a.location or 'Pan-India'} | "
-            f"Rating: {a.rating}⭐"
-        )
-        if a.description:
-            line += f" | {a.description[:80]}"
+        line = f"- {a.name} ({a.brand or 'Brand N/A'}): ₹{a.price_per_day}/day, ₹{a.monthly_rent}/month (Deposit: ₹{a.deposit}, {a.location or 'Hyderabad'})"
         lines.append(line)
 
     return "\n".join(lines)
@@ -85,11 +124,9 @@ def get_platform_stats():
     try:
         total_appliances = Appliance.objects(available=True).count()
         categories = Appliance.objects(available=True).distinct('category')
-        total_bookings = Booking.objects.count()
         return {
             'total_appliances': total_appliances,
             'categories': list(categories),
-            'total_bookings': total_bookings,
         }
     except Exception:
         return {}
@@ -102,51 +139,57 @@ def chat_with_ollama(request):
     if not user_message:
         return Response({"error": "Message is required"}, status=400)
 
+    stream_mode = request.data.get('stream', False)
+
     # --- Step 1: Retrieve real data from MongoDB (RAG) ---
     appliances = fetch_relevant_appliances(user_message)
     context_block = build_context_block(appliances)
-    stats = get_platform_stats()
 
-    stats_text = ""
-    if stats:
-        stats_text = (
-            f"\n\nPlatform Overview:\n"
-            f"- Total available appliances: {stats.get('total_appliances', 'N/A')}\n"
-            f"- Categories available: {', '.join(stats.get('categories', []))}\n"
-            f"- Total bookings made: {stats.get('total_bookings', 'N/A')}"
-        )
-
-    # --- Step 2: Build enriched RAG prompt ---
-    system_prompt = f"""You are Rentova's AI assistant — a smart, friendly, and knowledgeable rental concierge.
-
-Rentova is a premium household appliance rental platform in India. Users can rent appliances daily, weekly, or monthly with free delivery and setup.
-
-REAL-TIME APPLIANCE DATA FROM OUR DATABASE:
+    # --- Step 2: Build compact RAG prompt for fast CPU inference ---
+    system_prompt = f"""You are Rentova AI assistant for appliance rentals in India.
+Answer warmly and concisely (2-4 sentences max) based ONLY on this inventory:
 {context_block}
-{stats_text}
-
-INSTRUCTIONS:
-- Always answer using the REAL DATA provided above. Do NOT invent appliances or prices.
-- When quoting prices, use the exact ₹ values from the data.
-- If the user asks about something not in the data, say "We don't currently have that available" — don't make up information.
-- Be concise, warm, and helpful. Use simple language.
-- If recommending appliances, list 2-3 best options with their price and key features.
-- Rental policies: Free delivery & setup, cancel anytime, security deposit refunded on return in good condition.
-"""
+Terms: Free delivery & setup, refundable security deposit, cancel anytime."""
 
     full_prompt = f"{system_prompt}\n\nUser: {user_message}\nAssistant:"
 
-    # --- Step 3: Call local Ollama ---
+    active_model = get_best_available_model()
     payload = {
-        "model": OLLAMA_MODEL,
+        "model": active_model,
         "prompt": full_prompt,
-        "stream": False,
+        "stream": stream_mode,
         "options": {
             "temperature": 0.7,
-            "num_predict": 200,   # Keep responses concise and fast on CPU
-            "num_ctx": 2048,      # Smaller context window = faster inference
+            "num_predict": 150,   # Keep responses concise and fast on CPU
+            "num_ctx": 1024,      # Compact context window to fit within available memory
+            "num_gpu": 0,         # Force CPU execution to prevent Intel Iris Xe / Vulkan driver crashes
         }
     }
+
+    if stream_mode:
+        def stream_generator():
+            # Send immediate comment so HTTP 200 headers flush to client without waiting
+            yield ": open\n\n"
+            try:
+                resp = requests.post(OLLAMA_API_URL, json=payload, stream=True, timeout=120)
+                resp.raise_for_status()
+                for line in resp.iter_lines():
+                    if line:
+                        chunk = json.loads(line.decode('utf-8'))
+                        token = chunk.get('response', '')
+                        done = chunk.get('done', False)
+                        data_str = json.dumps({'token': token, 'done': done})
+                        yield f"data: {data_str}\n\n"
+                        if done:
+                            break
+            except Exception as e:
+                err_str = json.dumps({'error': str(e), 'done': True})
+                yield f"data: {err_str}\n\n"
+
+        response = StreamingHttpResponse(stream_generator(), content_type='text/event-stream')
+        response['Cache-Control'] = 'no-cache'
+        response['X-Accel-Buffering'] = 'no'
+        return response
 
     try:
         response = requests.post(OLLAMA_API_URL, json=payload, timeout=120)

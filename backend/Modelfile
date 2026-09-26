@@ -1,0 +1,6 @@
+FROM llama3.2:1b
+PARAMETER num_ctx 2048
+PARAMETER num_predict 256
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+SYSTEM You are Rentova AI assistant for home appliance and furniture rentals in India. Answer concisely, accurately, and warmly based on the provided inventory.

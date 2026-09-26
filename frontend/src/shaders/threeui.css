@@ -903,7 +903,7 @@ img.sunset-valley-fallback {
   border-radius: 11px;
   background: rgba(14, 14, 14, 0.86);
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.48), inset 0 1px rgba(255, 255, 255, 0.035);
-  backdrop-filter: blur(18px) saturate(75%);
+  
   transform: translateX(-50%);
   isolation: isolate;
 }
@@ -926,7 +926,7 @@ img.sunset-valley-fallback {
   font: 400 10px/1 "ThreeUI Fragment Mono", ui-monospace, monospace;
   letter-spacing: 0.1em;
   white-space: nowrap;
-  backdrop-filter: blur(14px) saturate(70%);
+  
   transform-origin: 50% 0;
   transition: color 0.15s, border-color 0.18s, background 0.18s, box-shadow 0.18s;
   will-change: width, height, transform;
@@ -1218,7 +1218,7 @@ img.sunset-valley-fallback {
     radial-gradient(46% 56% at 78% 20%, rgba(186, 96, 255, 0.3), transparent 70%),
     radial-gradient(40% 48% at 52% 6%, rgba(56, 220, 214, 0.2), transparent 72%),
     radial-gradient(34% 40% at 50% 14%, rgba(255, 255, 255, 0.07), transparent 76%);
-  filter: blur(8px);
+  
 }
 
 .atd-modern__bar {
@@ -1227,8 +1227,8 @@ img.sunset-valley-fallback {
   border-radius: 999px;
   background: linear-gradient(180deg, rgba(25, 27, 36, 0.86), rgba(12, 13, 18, 0.82));
   box-shadow: 0 22px 52px -24px rgba(0, 0, 0, 0.92), inset 0 1px rgba(255, 255, 255, 0.045);
-  backdrop-filter: blur(22px) saturate(150%);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  
+
 }
 
 .atd-modern__brand {
@@ -1261,8 +1261,8 @@ img.sunset-valley-fallback {
   border-color: rgba(255, 255, 255, 0.055);
   background: rgba(255, 255, 255, 0.055);
   box-shadow: 0 8px 20px -14px rgba(0, 0, 0, 0.9), inset 0 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(18px) saturate(170%);
-  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  
+
 }
 
 .atd-modern__item[aria-pressed="true"] {
@@ -1588,8 +1588,8 @@ img.sunset-valley-fallback {
     inset 0 1px 0 rgba(255, 255, 255, 0.44),
     inset 0 -1px 0 rgba(255, 255, 255, 0.12),
     inset 0 0 0 1px rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(26px) saturate(190%);
-  -webkit-backdrop-filter: blur(26px) saturate(190%);
+  
+
   transform: translateY(-50%);
 }
 

@@ -56,14 +56,65 @@ export default function AIChatbot() {
     setMessages((prev) => [...prev, { role: 'user', content: userMessage }]);
     setInput('');
     setIsLoading(true);
+
+    let assistantText = '';
+    let addedAssistant = false;
+
     try {
-      const response = await axios.post('http://localhost:8000/api/chat/', { message: userMessage });
-      setMessages((prev) => [...prev, { role: 'assistant', content: response.data.response }]);
+      const response = await fetch('http://localhost:8000/api/chat/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage, stream: true }),
+      });
+
+      if (!response.ok) throw new Error('API error');
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let buffer = '';
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop();
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (trimmed.startsWith('data: ')) {
+            try {
+              const data = JSON.parse(trimmed.slice(6));
+              if (data.error) throw new Error(data.error);
+              if (data.token) {
+                assistantText += data.token;
+                if (!addedAssistant) {
+                  addedAssistant = true;
+                  setIsLoading(false);
+                  setMessages((prev) => [...prev, { role: 'assistant', content: assistantText }]);
+                } else {
+                  setMessages((prev) => {
+                    const next = [...prev];
+                    next[next.length - 1] = { role: 'assistant', content: assistantText };
+                    return next;
+                  });
+                }
+              }
+              if (data.done) break;
+            } catch {
+              // Ignore partial chunk parse errors
+            }
+          }
+        }
+      }
     } catch {
-      setMessages((prev) => [
-        ...prev,
-        { role: 'assistant', content: '⚠️ Could not reach AI. Make sure Ollama is running locally.', isError: true },
-      ]);
+      if (!addedAssistant) {
+        setMessages((prev) => [
+          ...prev,
+          { role: 'assistant', content: '⚠️ Could not reach AI. Make sure Ollama is running locally.', isError: true },
+        ]);
+      }
     } finally {
       setIsLoading(false);
     }

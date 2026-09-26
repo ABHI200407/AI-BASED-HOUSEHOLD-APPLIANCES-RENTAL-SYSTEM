@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'ml_forecast',
     'ml_churn',
     'installations',
+    'simulation',
 ]
 
 MIDDLEWARE = [

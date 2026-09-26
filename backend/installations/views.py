@@ -9,15 +9,23 @@ from .models import Installation
 from bson.errors import InvalidId
 
 def format_installation(inst):
-    # Retrieve referenced documents
     booking = inst.booking_id
-    # We might need to handle dereferencing if it's not automatically dereferenced
+    app = booking.appliance_id if booking else None
+    image_url = ''
+    if app:
+        if getattr(app, 'image_url', None):
+            image_url = app.image_url
+        elif getattr(app, 'images', None) and len(app.images) > 0:
+            image_url = app.images[0]
+
     return {
         'id': str(inst.id),
-        'booking_id': str(booking.id),
-        'appliance_name': booking.appliance_id.name if booking.appliance_id else '',
-        'tenant_name': booking.tenant_id.full_name if booking.tenant_id else '',
-        'technician_name': inst.technician_name,
+        'booking_id': str(booking.id) if booking else '',
+        'appliance_name': app.name if app else '',
+        'appliance_category': getattr(app, 'category', '') if app else '',
+        'image_url': image_url,
+        'tenant_name': booking.tenant_id.full_name if (booking and booking.tenant_id) else '',
+        'technician_name': inst.technician_name or 'Verified Rentova Specialist',
         'scheduled_date': inst.scheduled_date.isoformat() if inst.scheduled_date else None,
         'status': inst.status,
         'notes': inst.notes,

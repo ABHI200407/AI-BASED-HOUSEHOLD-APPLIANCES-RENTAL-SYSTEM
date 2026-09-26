@@ -104,7 +104,7 @@ export default function DeepSeaView() {
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 20, width: '100%', maxWidth: '600px', pointerEvents: 'none' }}>
           
           <div ref={pkg1Ref} style={{ position: 'absolute', width: '100%', textAlign: 'center' }}>
-             <div style={{ background: 'rgba(248, 250, 252, 0.9)', backdropFilter: 'blur(10px)', padding: '2rem', borderRadius: '16px', color: '#0f172a', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+             <div style={{ background: 'rgba(248, 250, 252, 0.9)',  padding: '2rem', borderRadius: '16px', color: '#0f172a', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
                 <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '2rem', fontWeight: 800 }}>Sunlight Starter</h3>
                 <p style={{ margin: '0 0 1rem 0', fontSize: '1.5rem', color: '#0ea5e9', fontWeight: 700 }}>$49/mo</p>
                 <p style={{ margin: 0, fontSize: '1rem', color: '#475569', lineHeight: 1.5 }}>The perfect bright start. Includes a basic sofa, coffee table, and bed frame. Ideal for small apartments and studio living.</p>
@@ -112,7 +112,7 @@ export default function DeepSeaView() {
           </div>
 
           <div ref={pkg2Ref} style={{ position: 'absolute', width: '100%', textAlign: 'center', opacity: 0 }}>
-             <div style={{ background: 'rgba(15, 23, 42, 0.8)', backdropFilter: 'blur(10px)', padding: '2rem', borderRadius: '16px', color: '#f8fafc', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
+             <div style={{ background: 'rgba(15, 23, 42, 0.8)',  padding: '2rem', borderRadius: '16px', color: '#f8fafc', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
                 <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '2rem', fontWeight: 800 }}>Twilight Premium</h3>
                 <p style={{ margin: '0 0 1rem 0', fontSize: '1.5rem', color: '#3b82f6', fontWeight: 700 }}>$129/mo</p>
                 <p style={{ margin: 0, fontSize: '1rem', color: '#94a3b8', lineHeight: 1.5 }}>Deeper comfort. Upgraded memory foam mattresses, velvet sectional sofas, and 4K smart TVs. Perfect for a 1BHK upgrade.</p>
@@ -120,7 +120,7 @@ export default function DeepSeaView() {
           </div>
 
           <div ref={pkg3Ref} style={{ position: 'absolute', width: '100%', textAlign: 'center', opacity: 0 }}>
-             <div style={{ background: 'rgba(2, 6, 23, 0.9)', backdropFilter: 'blur(20px)', padding: '2rem', borderRadius: '16px', color: '#f8fafc', border: '1px solid rgba(16, 185, 129, 0.3)', boxShadow: '0 0 40px rgba(16, 185, 129, 0.2)' }}>
+             <div style={{ background: 'rgba(2, 6, 23, 0.9)',  padding: '2rem', borderRadius: '16px', color: '#f8fafc', border: '1px solid rgba(16, 185, 129, 0.3)', boxShadow: '0 0 40px rgba(16, 185, 129, 0.2)' }}>
                 <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '2rem', fontWeight: 800, color: '#10b981' }}>Abyssal Signature</h3>
                 <p style={{ margin: '0 0 1rem 0', fontSize: '1.5rem', color: '#34d399', fontWeight: 700 }}>$299/mo</p>
                 <p style={{ margin: 0, fontSize: '1rem', color: '#94a3b8', lineHeight: 1.5 }}>Total luxury in the darkest depths. Features hyper-premium ergonomic furniture, 8K OLED displays, and smart home integration.</p>

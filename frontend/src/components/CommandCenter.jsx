@@ -20,6 +20,8 @@ const shortcuts = [
   { keys: '/', description: 'Focus search', action: () => {} },
   { keys: 'g h', description: 'Go to Home', action: (nav) => nav('/') },
   { keys: 'g c', description: 'Go to Catalog', action: (nav) => nav('/catalog') },
+  { keys: 'g n', description: 'New Drops', action: (nav) => nav('/new-drops') },
+  { keys: 'g j', description: 'Journal & Stories', action: (nav) => nav('/journal') },
   { keys: 'g a', description: 'Go to Add Appliance', action: (nav) => nav('/owner/add-appliance') },
   { keys: 'g d', description: 'Owner Dashboard', action: (nav) => nav('/owner') },
   { keys: 'g c f', description: 'Category: Furniture', action: (nav) => nav('/category/furniture') },
@@ -182,7 +184,7 @@ const panelStyle = {
   width: 'min(600px, 90vw)',
   maxHeight: '80vh',
   boxShadow: 'var(--shadow-lg, 0 10px 30px rgba(0,0,0,0.2))',
-  backdropFilter: 'blur(12px)',
+  
   border: '1px solid var(--border-muted, #e2e8f0)',
   display: 'flex',
   flexDirection: 'column',

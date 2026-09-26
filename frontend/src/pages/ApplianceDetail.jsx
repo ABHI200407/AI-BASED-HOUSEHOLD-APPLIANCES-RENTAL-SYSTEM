@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { CheckCircle2, ChevronRight, Clock3, ShieldCheck, Truck, Wrench } from 'lucide-react';
+import { Calculator, CheckCircle2, ChevronRight, Clock3, ShieldCheck, Truck, Wrench } from 'lucide-react';
 import api from '../api/axios';
 import { AuthContext } from '../context/AuthContext';
 import { CartContext } from '../context/CartContext';
@@ -40,8 +40,9 @@ export default function ApplianceDetail() {
   };
 
   useEffect(() => {
-    if (appliance?.images?.length > 0 && !activeImage) {
-      setActiveImage(resolveMediaUrl(appliance.images[0]));
+    const src = (appliance?.images && appliance.images.length > 0) ? appliance.images[0] : (appliance?.image_url || appliance?.image);
+    if (src && !activeImage) {
+      setActiveImage(resolveMediaUrl(src));
     }
   }, [appliance, activeImage]);
 
@@ -57,28 +58,42 @@ export default function ApplianceDetail() {
     
     if (financialModel === 'subscribe') {
       return { 
-        discountedMonthlyRent: baseMonthlyRent * 0.8, 
+        discountedMonthlyRent: Math.round(baseMonthlyRent * 0.8), 
         securityDeposit: 0, 
+        depositMultiplier: 0,
         discount: 0.2, 
         label: '/month' 
       };
     } else if (financialModel === 'buy') {
       return { 
-        discountedMonthlyRent: baseMonthlyRent * 24, 
+        discountedMonthlyRent: Math.round(baseMonthlyRent * 24), 
         securityDeposit: 0, 
+        depositMultiplier: 0,
         discount: 0, 
         label: ' total' 
       };
     }
 
     let discount = 0;
-    if (tenure >= 6) discount = 0.1;
-    if (tenure >= 12) discount = 0.2;
+    let depositMultiplier = 1.5;
+    if (tenure === 1) {
+      discount = 0;
+      depositMultiplier = 1.5;
+    } else if (tenure === 3) {
+      discount = 0.05;
+      depositMultiplier = 1.3;
+    } else if (tenure === 6) {
+      discount = 0.10;
+      depositMultiplier = 1.1;
+    } else if (tenure >= 12) {
+      discount = 0.20;
+      depositMultiplier = 0.9;
+    }
 
-    const discountedMonthlyRent = baseMonthlyRent * (1 - discount);
-    const securityDeposit = appliance?.deposit || baseMonthlyRent * 2;
+    const discountedMonthlyRent = Math.round(baseMonthlyRent * (1 - discount));
+    const securityDeposit = Math.round(discountedMonthlyRent * depositMultiplier);
 
-    return { discount, baseMonthlyRent, discountedMonthlyRent, securityDeposit, label: '/month' };
+    return { discount, depositMultiplier, baseMonthlyRent, discountedMonthlyRent, securityDeposit, label: '/month' };
   }, [appliance, tenure, financialModel]);
 
   if (error) {
@@ -197,17 +212,49 @@ export default function ApplianceDetail() {
           </div>
 
           {financialModel === 'rent' && (
-            <div className="rv-tenure-grid">
-              {[3, 6, 12].map((months) => (
-                <div
-                  key={months}
-                  className={`rv-tenure-card ${tenure === months ? 'active' : ''}`}
-                  onClick={() => setTenure(months)}
-                >
-                  <strong>{months}</strong>
-                  <span>Months</span>
-                </div>
-              ))}
+            <div style={{ marginBottom: '1.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                <span className="rv-section-label">Select Rental Tenure</span>
+                <span style={{ fontSize: '0.75rem', color: '#0284c7', fontWeight: 700 }}>Dynamic Deposit Tier</span>
+              </div>
+              <div className="rv-tenure-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+                {[
+                  { m: 1, label: 'Standard', depositText: '1.5x' },
+                  { m: 3, label: '5% OFF', depositText: '1.3x' },
+                  { m: 6, label: '10% OFF', depositText: '1.1x' },
+                  { m: 12, label: '20% OFF', depositText: '0.9x' }
+                ].map(({ m, label, depositText }) => (
+                  <div
+                    key={m}
+                    className={`rv-tenure-card ${tenure === m ? 'active' : ''}`}
+                    onClick={() => setTenure(m)}
+                    style={{ position: 'relative', textAlign: 'center', padding: '0.75rem 0.25rem' }}
+                  >
+                    <strong>{m}M</strong>
+                    <span style={{ fontSize: '0.7rem', display: 'block', color: tenure === m ? '#ffffff' : 'var(--rv-color-secondary)' }}>{label}</span>
+                    <span style={{ fontSize: '0.65rem', display: 'block', opacity: 0.8, marginTop: '2px' }}>{depositText} dep</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Dynamic Deposit Explanation Card */}
+              <div style={{
+                marginTop: '0.75rem',
+                padding: '0.6rem 0.85rem',
+                background: 'rgba(2, 132, 199, 0.08)',
+                border: '1px solid rgba(2, 132, 199, 0.2)',
+                borderRadius: '8px',
+                fontSize: '0.75rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                color: '#0369a1'
+              }}>
+                <ShieldCheck size={14} style={{ flexShrink: 0 }} />
+                <span>
+                  <strong>Dynamic Deposit Active:</strong> {pricing.depositMultiplier}x monthly rent (₹{pricing.securityDeposit.toLocaleString('en-IN')}). 100% refundable on return.
+                </span>
+              </div>
             </div>
           )}
 
@@ -239,7 +286,7 @@ export default function ApplianceDetail() {
             </div>
           )}
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid var(--rv-color-border)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1.25rem', paddingBottom: '1.25rem', borderBottom: '1px solid var(--rv-color-border)' }}>
             <div>
               <span className="rv-section-label" style={{ marginBottom: '0.25rem' }}>{financialModel === 'buy' ? 'Total Price' : 'Monthly Rent'}</span>
               <strong style={{ fontSize: '2rem', color: 'var(--rv-color-primary)', lineHeight: 1 }}>₹{pricing.discountedMonthlyRent.toLocaleString('en-IN')}</strong>
@@ -251,6 +298,37 @@ export default function ApplianceDetail() {
               </div>
             )}
           </div>
+
+          {financialModel === 'rent' && (
+            <div style={{ marginBottom: '1.25rem', padding: '0.85rem 1rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', fontSize: '0.8rem', color: '#64748b' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+                <span>Base rent ({tenure} mo plan):</span>
+                <span>₹{pricing.discountedMonthlyRent.toLocaleString('en-IN')}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+                <span>18% GST (Rental SAC 997212):</span>
+                <span>+₹{Math.round(pricing.discountedMonthlyRent * 0.18).toLocaleString('en-IN')}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 700, color: '#0f172a', borderTop: '1px dashed #cbd5e1', paddingTop: '4px' }}>
+                <span>Total monthly:</span>
+                <span>₹{Math.round(pricing.discountedMonthlyRent * 1.18).toLocaleString('en-IN')}</span>
+              </div>
+              <div style={{ marginTop: '6px', fontSize: '0.74rem', color: '#059669', display: 'flex', justifyContent: 'space-between' }}>
+                <span>Refundable deposit ({pricing.depositMultiplier}×):</span>
+                <strong>₹{pricing.securityDeposit.toLocaleString('en-IN')} (100% refund)</strong>
+              </div>
+            </div>
+          )}
+
+          <Link to="/financials" style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+            fontSize: '0.8rem', color: 'var(--accent, #5c45fd)', fontWeight: 700,
+            textDecoration: 'none', marginBottom: '1.25rem', padding: '0.6rem 0.8rem',
+            borderRadius: '10px', background: 'rgba(92, 69, 253, 0.06)',
+            border: '1px solid rgba(92, 69, 253, 0.15)',
+          }}>
+            <Calculator size={14} /> Compare with Rent vs. Buy Calculator →
+          </Link>
 
           {user && user.role === 'tenant' ? (
             appliance.available ? (

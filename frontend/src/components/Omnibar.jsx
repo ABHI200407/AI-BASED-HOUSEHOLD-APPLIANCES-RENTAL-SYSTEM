@@ -42,7 +42,7 @@ export default function Omnibar() {
         alignItems: 'center',
         gap: '12px',
         boxShadow: focused ? '0 0 30px rgba(59, 130, 246, 0.2)' : 'none',
-        backdropFilter: 'blur(10px)',
+        
       }}>
         {focused ? <Sparkles size={18} color="#3b82f6" /> : <Terminal size={18} color="#666" />}
         <input 

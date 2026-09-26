@@ -25,13 +25,24 @@ export default function CategoryLanding() {
   const fetchItems = async () => {
     setLoading(true);
     try {
-      const res = await api.get('appliances/');
-      // Filter logic: in a real app, query the backend. Here we filter dummy data if possible.
-      // Assuming 'packages' shows specific items, etc.
-      let filtered = res.data;
-      if (name === 'furniture') filtered = res.data.filter(i => i.category.toLowerCase().includes('furniture') || i.category.toLowerCase().includes('chair'));
-      else if (name === 'appliances') filtered = res.data.filter(i => !i.category.toLowerCase().includes('furniture'));
-      else if (name === 'packages') filtered = res.data.slice(0, 3); // mock packages
+      const res = await api.get('appliances/', { params: { limit: 50 } });
+      const rawList = res.data.results || res.data || [];
+      const list = Array.isArray(rawList) ? rawList : [];
+
+      let filtered = list;
+      if (name === 'furniture') {
+        filtered = list.filter(i => {
+          const cat = (i.category || '').toLowerCase();
+          return cat.includes('furniture') || cat.includes('chair') || cat.includes('sofa') || cat.includes('bed') || cat.includes('dining') || cat.includes('desk') || cat.includes('storage') || cat.includes('workstation');
+        });
+      } else if (name === 'appliances') {
+        filtered = list.filter(i => {
+          const cat = (i.category || '').toLowerCase();
+          return cat.includes('appliance') || cat.includes('ac') || cat.includes('tv') || cat.includes('refrigerator') || cat.includes('washing') || cat.includes('microwave') || cat.includes('purifier');
+        });
+      } else if (name === 'packages') {
+        filtered = list.slice(0, 6);
+      }
       
       setItems(filtered);
     } catch (err) {

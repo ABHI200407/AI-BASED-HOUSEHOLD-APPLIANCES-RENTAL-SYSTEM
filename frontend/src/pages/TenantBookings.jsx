@@ -1,13 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, MapPin, PackageSearch, ShieldCheck, XCircle } from 'lucide-react';
+import { Calendar, MapPin, PackageSearch, ShieldCheck, XCircle, RotateCcw, CheckCircle2 } from 'lucide-react';
 import api from '../api/axios';
 import { AuthContext } from '../context/AuthContext';
 import { formatDate, formatINR } from '../utils/media';
+import ReturnRefundModal from '../components/ReturnRefundModal';
 
 export default function TenantBookings() {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
+  const [selectedReturnBooking, setSelectedReturnBooking] = useState(null);
+  const [isReturnModalOpen, setIsReturnModalOpen] = useState(false);
 
   useEffect(() => {
     fetchBookings();
@@ -103,21 +106,50 @@ export default function TenantBookings() {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', flexWrap: 'wrap', gap: '0.75rem' }}>
                 <span style={{ fontSize: '0.875rem', color: 'var(--rv-color-secondary)', fontWeight: 600 }}>
-                  Current status: {statusLabel(booking.status)}
+                  Current status: <strong style={{ textTransform: 'capitalize', color: 'var(--rv-color-primary)' }}>{statusLabel(booking.status)}</strong>
                 </span>
-                
-                {booking.status === 'requested' && (
-                  <button onClick={() => cancelBooking(booking.id)} className="rv-button rv-button--light" style={{ color: '#ef4444', borderColor: 'rgba(239, 68, 68, 0.2)' }}>
-                    <XCircle size={16} /> Cancel booking
-                  </button>
-                )}
+
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  {booking.status === 'returned' ? (
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#16a34a', background: '#ecfdf5', padding: '6px 12px', borderRadius: '99px', fontWeight: 700, fontSize: '0.85rem' }}>
+                      <CheckCircle2 size={16} /> Returned &bull; 100% Deposit Refunded
+                    </span>
+                  ) : (
+                    booking.status !== 'cancelled' && (
+                      <button 
+                        onClick={() => {
+                          setSelectedReturnBooking(booking);
+                          setIsReturnModalOpen(true);
+                        }} 
+                        className="rv-button rv-button--light" 
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#0284c7', borderColor: 'rgba(2, 132, 199, 0.4)', fontWeight: 700 }}
+                      >
+                        <RotateCcw size={15} /> Return &amp; Refund Deposit
+                      </button>
+                    )
+                  )}
+
+                  {booking.status === 'requested' && (
+                    <button onClick={() => cancelBooking(booking.id)} className="rv-button rv-button--light" style={{ color: '#ef4444', borderColor: 'rgba(239, 68, 68, 0.2)', fontSize: '0.85rem' }}>
+                      <XCircle size={15} /> Cancel
+                    </button>
+                  )}
+                </div>
               </div>
             </article>
           ))}
         </div>
       )}
+
+      {/* Return & Refund Simulation Modal */}
+      <ReturnRefundModal
+        isOpen={isReturnModalOpen}
+        onClose={() => setIsReturnModalOpen(false)}
+        rental={selectedReturnBooking}
+        onRefundSuccess={() => fetchBookings()}
+      />
     </main>
   );
 }

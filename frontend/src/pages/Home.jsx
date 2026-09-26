@@ -16,6 +16,7 @@ import {
   ShieldCheck,
   Sparkles,
   WandSparkles,
+  Calculator,
 } from 'lucide-react';
 import Hero3DView from '../components/Hero3DView';
 import StorySphere from '../components/StorySphere';
@@ -89,16 +90,16 @@ export default function Home() {
 
 
         </div>
-
-        <div className="rv-hero-ticker">
-          <div className="rv-shell rv-hero-ticker__inner">
-            <span>Furniture that fits</span><i />
-            <span>Appliances that work</span><i />
-            <span>Terms that move with you</span><i />
-            <span>Support that actually shows up</span>
-          </div>
-        </div>
       </section>
+
+      <div className="rv-hero-ticker">
+        <div className="rv-shell rv-hero-ticker__inner">
+          <span>Furniture that fits</span><i />
+          <span>Appliances that work</span><i />
+          <span>Terms that move with you</span><i />
+          <span>Support that actually shows up</span>
+        </div>
+      </div>
 
       <section className="rv-trust-strip rv-shell" aria-label="Rental benefits">
         <div><PackageCheck size={22} /><span><strong>24-72 hour delivery</strong> in select city zones</span></div>
@@ -175,6 +176,79 @@ export default function Home() {
 
       <section className="rv-shell">
         <StorySphere />
+      </section>
+
+      {/* ── Dynamic Financials Promo Section ── */}
+      <section className="rv-shell" style={{ margin: '3.5rem auto' }}>
+        <div style={{
+          background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)',
+          borderRadius: '24px',
+          padding: '3.5rem 3rem',
+          color: '#ffffff',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '3rem',
+          alignItems: 'center',
+          boxShadow: '0 20px 40px rgba(15, 23, 42, 0.15)',
+        }}>
+          <div>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              background: 'rgba(92, 69, 253, 0.25)', border: '1px solid rgba(92, 69, 253, 0.4)',
+              color: '#818cf8', borderRadius: '99px', padding: '6px 14px',
+              fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em',
+              marginBottom: '1.25rem',
+            }}>
+              <Calculator size={14} /> Dynamic Financials Engine
+            </span>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, fontFamily: 'var(--rv-font-display)', margin: '0 0 1rem', lineHeight: 1.15 }}>
+              Transparent Math.<br />Zero Surprise Bills.
+            </h2>
+            <p style={{ color: '#94a3b8', fontSize: '1.05rem', lineHeight: 1.6, margin: '0 0 2rem' }}>
+              Instant 3, 6 &amp; 12-month tenure discounts up to 30%, 18% GST calculation, dynamic refundable security deposit, and our side-by-side Rent vs. Buy Calculator.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <Link to="/financials" style={{
+                background: 'var(--accent, #5c45fd)', color: '#ffffff', textDecoration: 'none',
+                padding: '0.85rem 1.8rem', borderRadius: '99px', fontWeight: 700, fontSize: '0.95rem',
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+              }}>
+                Launch Financial Calculator <ArrowRight size={17} />
+              </Link>
+              <Link to="/tour" style={{
+                background: 'rgba(255,255,255,0.08)', color: '#e2e8f0', textDecoration: 'none',
+                border: '1px solid rgba(255,255,255,0.15)',
+                padding: '0.85rem 1.8rem', borderRadius: '99px', fontWeight: 600, fontSize: '0.95rem',
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+              }}>
+                Take Interactive Tour
+              </Link>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '1.5rem' }}>
+              <span style={{ fontSize: '0.75rem', color: '#818cf8', fontWeight: 800, textTransform: 'uppercase' }}>Tenure Discounts</span>
+              <strong style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0 0.25rem' }}>Up to 30%</strong>
+              <p style={{ margin: 0, fontSize: '0.8rem', color: '#94a3b8' }}>Tiered discounts on 3, 6, 12 &amp; 24-month plans</p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '1.5rem' }}>
+              <span style={{ fontSize: '0.75rem', color: '#10b981', fontWeight: 800, textTransform: 'uppercase' }}>Tax Clarity</span>
+              <strong style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0 0.25rem' }}>18% GST</strong>
+              <p style={{ margin: 0, fontSize: '0.8rem', color: '#94a3b8' }}>Transparent SAC 997212 breakdown with ITC support</p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '1.5rem' }}>
+              <span style={{ fontSize: '0.75rem', color: '#38bdf8', fontWeight: 800, textTransform: 'uppercase' }}>Security Deposit</span>
+              <strong style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0 0.25rem' }}>0.75x–1.5x</strong>
+              <p style={{ margin: 0, fontSize: '0.8rem', color: '#94a3b8' }}>Dynamic multiplier based on tenure, 100% refundable</p>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '1.5rem' }}>
+              <span style={{ fontSize: '0.75rem', color: '#f59e0b', fontWeight: 800, textTransform: 'uppercase' }}>Rent vs. Buy</span>
+              <strong style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0 0.25rem' }}>Side-by-Side</strong>
+              <p style={{ margin: 0, fontSize: '0.8rem', color: '#94a3b8' }}>Real-time depreciation &amp; salvage value comparison</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="rv-cta-band">

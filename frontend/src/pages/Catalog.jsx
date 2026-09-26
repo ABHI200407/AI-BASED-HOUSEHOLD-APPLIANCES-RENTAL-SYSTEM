@@ -158,14 +158,15 @@ export default function Catalog() {
 
   // Convert raw API response into ProductCard format
   const formatForCard = (item) => {
-    const defaultImage = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80';
-    let img = defaultImage;
-    if (item.images && item.images.length > 0) {
-      const src = item.images[0];
-      if (src.startsWith('http') || src.startsWith('/downloaded_images')) {
-        img = src;
+    const rawSrc = item.image_url || (item.images && item.images.length > 0 ? item.images[0] : null) || item.image;
+    let img = '/downloaded_images/living_room/full_room/full_room_001_pid6980724.jpg';
+    if (rawSrc) {
+      if (rawSrc.startsWith('http') || rawSrc.startsWith('/downloaded_images') || rawSrc.startsWith('/images')) {
+        img = rawSrc;
+      } else if (rawSrc.startsWith('/')) {
+        img = rawSrc;
       } else {
-        img = `http://localhost:8000${src}`;
+        img = `http://localhost:8000/${rawSrc}`;
       }
     }
     return {

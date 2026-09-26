@@ -56,7 +56,7 @@ export default function RoomConfigurator() {
           onClick={() => setIsConfigOpen(!isConfigOpen)}
           style={{
             display: 'flex', alignItems: 'center', gap: '10px',
-            background: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(10px)',
+            background: 'rgba(255, 255, 255, 0.9)', 
             border: '1px solid rgba(0,0,0,0.1)', padding: '12px 24px',
             borderRadius: '999px', cursor: 'pointer', fontWeight: 600,
             boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
@@ -79,7 +79,7 @@ export default function RoomConfigurator() {
               position: 'absolute', top: 20, right: 20, bottom: 20,
               width: '380px', zIndex: 10,
               background: 'rgba(255, 255, 255, 0.85)',
-              backdropFilter: 'blur(24px)',
+              
               border: '1px solid rgba(255,255,255,0.4)',
               borderRadius: '24px',
               padding: '32px',

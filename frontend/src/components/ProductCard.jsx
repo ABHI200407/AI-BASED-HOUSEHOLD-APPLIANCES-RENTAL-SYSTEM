@@ -6,10 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { CartContext } from '../context/CartContext';
 import { asCartItem } from '../data/experience';
-import LiquidImage from './LiquidImage';
 import DynamicThemeWrapper from './DynamicThemeWrapper';
 
-export default function ProductCard({ product, compact = false, financialModel = 'rent' }) {
+export default function ProductCard({ product, appliance, compact = false, financialModel = 'rent' }) {
 
   const [quickView, setQuickView] = useState(false);
   const { user } = useContext(AuthContext);
@@ -18,11 +17,31 @@ export default function ProductCard({ product, compact = false, financialModel =
   const [added, setAdded] = useState(false);
   const [saved, setSaved] = useState(false);
 
+  const item = product || appliance || {};
+  const itemName = item.name || 'Curated Asset';
+  const monthlyRent = Number(item.price || item.monthly_rent || (item.price_per_day ? Math.round(item.price_per_day * 30) : 1200));
+  const itemCategory = item.category || 'Living Room';
+  const itemRating = item.rating || '4.8';
+  const itemId = item.id || item._id;
+
+  // Resolve image reliably
+  const fallbackImg = '/downloaded_images/living_room/full_room/full_room_001_pid6980724.jpg';
+  const rawImage = item.image || item.image_url || (item.images && item.images.length > 0 ? item.images[0] : null);
+  let resolvedImage = fallbackImg;
+  if (rawImage) {
+    if (rawImage.startsWith('http') || rawImage.startsWith('/downloaded_images') || rawImage.startsWith('/images')) {
+      resolvedImage = rawImage;
+    } else if (rawImage.startsWith('/')) {
+      resolvedImage = rawImage;
+    } else {
+      resolvedImage = `http://localhost:8000/${rawImage}`;
+    }
+  }
+
   // Dynamic pricing based on model
-  const monthlyRent = product.price;
   let displayPrice = monthlyRent;
   let displayLabel = '/month';
-  let badgeLabel = product.badge;
+  let badgeLabel = item.badge || (item.available !== false ? 'Available' : 'Booked');
 
   if (financialModel === 'subscribe') {
     displayPrice = Math.round(monthlyRent * 0.8);
@@ -39,7 +58,7 @@ export default function ProductCard({ product, compact = false, financialModel =
       return;
     }
 
-    addToCart(asCartItem(product), { tenure: financialModel === 'subscribe' ? 12 : 3, purchaseModel: financialModel });
+    addToCart(asCartItem(item), { tenure: financialModel === 'subscribe' ? 12 : 3, purchaseModel: financialModel });
     setAdded(true);
     window.setTimeout(() => setAdded(false), 1600);
   };
@@ -47,27 +66,45 @@ export default function ProductCard({ product, compact = false, financialModel =
   return (
     <>
       <Magnetic className="magnetic-btn">
-        <DynamicThemeWrapper imageUrl={product.image} className="theme-wrapper">
+        <DynamicThemeWrapper imageUrl={resolvedImage} className="theme-wrapper">
           <motion.article
-            layoutId={`product-card-${product.id}`}
-            drag
-            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-            dragElastic={0.2}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className={`rv-product-card ${compact ? 'rv-product-card--compact' : ''} glass-card`}
-            style={{ cursor: 'grab', background: 'var(--theme-bg, #fff)' }}
+            layoutId={`product-card-${itemId}`}
+            whileHover={{ y: -4, boxShadow: '0 18px 36px -10px rgba(0,0,0,0.12)' }}
+            className={`rv-product-card ${compact ? 'rv-product-card--compact' : ''}`}
+            style={{ 
+              background: '#ffffff', 
+              border: '1px solid var(--rv-color-border, #e2e8f0)',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              transition: 'all 0.2s ease',
+            }}
           >
             <div className="card-3d-wrapper" style={{ height: '100%' }}>
               <div className="card-3d">
                 <div className="rv-product-card__media" style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
-                  <LiquidImage src={product.image} alt={product.name} className="product-liquid-img" />
+                  <img
+                    src={resolvedImage}
+                    alt={itemName}
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = fallbackImg;
+                    }}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                      transition: 'transform 0.4s ease',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.06)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                  />
                   <span className="rv-product-card__tag" style={{ position: 'absolute', top: 10, left: 10, zIndex: 10 }}>{badgeLabel}</span>
                   <button
                     type="button"
                     className={`rv-save-button ${saved ? 'rv-save-button--active' : ''}`}
                     onClick={() => setSaved((value) => !value)}
-                    aria-label={`Save ${product.name}`}
+                    aria-label={`Save ${itemName}`}
                     style={{ position: 'absolute', top: 10, right: 10, zIndex: 10 }}
                   >
                     <Heart size={17} fill={saved ? 'currentColor' : 'none'} />
@@ -83,11 +120,11 @@ export default function ProductCard({ product, compact = false, financialModel =
 
                 <div className="rv-product-card__body">
                   <div className="rv-product-card__meta">
-                    <span>{product.category}</span>
-                    <span><Star size={13} fill="currentColor" /> {product.rating}</span>
+                    <span>{itemCategory}</span>
+                    <span><Star size={13} fill="currentColor" /> {itemRating}</span>
                   </div>
-                  <Link to={`/appliance/${product.id}`} className="rv-product-card__title">
-                    {product.name}
+                  <Link to={`/appliance/${itemId}`} className="rv-product-card__title">
+                    {itemName}
                     <ArrowUpRight size={17} />
                   </Link>
                   <p className="rv-product-card__tenure">

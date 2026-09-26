@@ -73,7 +73,7 @@ const CARDS = [
     link: '/catalog?category=refrigerator',
   },
   {
-    img: '/downloaded_images/appliances/washing_machine/washing_machine_001_pid13416286.jpg',
+    img: '/downloaded_images/appliances/washing_machine/washing_machine_001_pid4440652.jpg',
     title: 'Washing Machines',
     n: '42+ models',
     tag: 'Front · Top load',
@@ -293,7 +293,7 @@ export default function LandingTour() {
         {/* backdrop */}
         <div style={{
           position: 'absolute', inset: 0, zIndex: -1, pointerEvents: 'none',
-          background: 'rgba(5,7,10,.62)', backdropFilter: 'blur(14px) saturate(1.1)',
+          background: 'rgba(5,7,10,.62)', 
           opacity: navStuck ? 1 : 0, transition: 'opacity .5s',
         }} />
         <div style={{
@@ -317,7 +317,7 @@ export default function LandingTour() {
 
         {/* Desktop links */}
         <div style={{ display: 'flex', gap: 'clamp(18px,2.6vw,46px)', marginLeft: 'auto' }}>
-          {[['Catalog', '/catalog'], ['Packages', '/packages'], ['Inspiration', '/inspiration']].map(([label, href]) => (
+          {[['Catalog', '/catalog'], ['Packages', '/packages'], ['Financials', '/financials'], ['Inspiration', '/inspiration']].map(([label, href]) => (
             <a
               key={label}
               href={href}
@@ -549,7 +549,10 @@ export default function LandingTour() {
             </span>
           </div>
         </div>
+      </div>
 
+      {/* ── Sub-sections container flowing after scenes ── */}
+      <div style={{ position: 'relative', background: '#05070a', color: '#dfe7e0', zIndex: 10 }}>
         {/* ── Section: Gate (Story) ─────────────────────────────────────────── */}
         <section id="story" style={{
           position: 'relative', padding: 'clamp(88px,15vh,190px) clamp(20px,3.4vw,56px)',

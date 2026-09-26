@@ -9,15 +9,28 @@ export default function Cart() {
   const navigate = useNavigate();
 
   const calculateItemTotals = (item) => {
-    const baseMonthly = item.monthly_rent || (item.price_per_day || 0) * 30 || item.price;
+    const baseMonthly = item.monthly_rent || (item.price_per_day || 0) * 30 || item.price || 0;
     let discount = 0;
-    if (item.tenure >= 6) discount = 0.1;
-    if (item.tenure >= 12) discount = 0.2;
+    let depositMultiplier = 1.5;
 
-    const discountedMonthly = baseMonthly * (1 - discount);
-    const securityDeposit = item.deposit || baseMonthly * 2;
+    if (item.tenure === 1) {
+      discount = 0;
+      depositMultiplier = 1.5;
+    } else if (item.tenure === 3) {
+      discount = 0.05;
+      depositMultiplier = 1.3;
+    } else if (item.tenure === 6) {
+      discount = 0.10;
+      depositMultiplier = 1.1;
+    } else if (item.tenure >= 12) {
+      discount = 0.20;
+      depositMultiplier = 0.9;
+    }
 
-    return { discountedMonthly, securityDeposit };
+    const discountedMonthly = Math.round(baseMonthly * (1 - discount));
+    const securityDeposit = Math.round(discountedMonthly * depositMultiplier);
+
+    return { discountedMonthly, securityDeposit, depositMultiplier, discount };
   };
 
   const totals = cartItems.reduce(
@@ -58,7 +71,7 @@ export default function Cart() {
       <div className="rv-split-layout">
         <section>
           {cartItems.map((item) => {
-            const { discountedMonthly, securityDeposit } = calculateItemTotals(item);
+            const { discountedMonthly, securityDeposit, depositMultiplier } = calculateItemTotals(item);
             let image = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80';
             if (item.images && item.images.length > 0) {
               const src = item.images[0];
@@ -84,18 +97,27 @@ export default function Cart() {
                     </button>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '2rem', marginTop: 'auto', alignItems: 'flex-end', flexWrap: 'wrap' }}>
-                    <div style={{ flex: 1, minWidth: '150px' }}>
-                      <label className="rv-section-label" style={{ marginBottom: '0.5rem' }}>Tenure</label>
+                  <div style={{ display: 'flex', gap: '1.5rem', marginTop: 'auto', alignItems: 'flex-end', flexWrap: 'wrap' }}>
+                    <div style={{ flex: 1, minWidth: '160px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.25rem' }}>
+                        <label className="rv-section-label" style={{ margin: 0 }}>Tenure</label>
+                        <span style={{ fontSize: '0.7rem', color: '#0284c7', fontWeight: 700 }}>{depositMultiplier}x deposit</span>
+                      </div>
                       <select
-                        value={item.tenure}
+                        value={item.tenure || 3}
                         onChange={(e) => updateTenure(item.id, parseInt(e.target.value, 10))}
-                        style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid var(--rv-color-border)', background: 'var(--rv-color-background)' }}
+                        style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid var(--rv-color-border)', background: 'var(--rv-color-background)', fontSize: '0.9rem' }}
                       >
-                        <option value={3}>3 months</option>
-                        <option value={6}>6 months (10% off)</option>
-                        <option value={12}>12 months (20% off)</option>
+                        <option value={1}>1 month &bull; 1.5x deposit</option>
+                        <option value={3}>3 months (5% off &bull; 1.3x dep)</option>
+                        <option value={6}>6 months (10% off &bull; 1.1x dep)</option>
+                        <option value={12}>12 months (20% off &bull; 0.9x dep)</option>
                       </select>
+                    </div>
+
+                    <div style={{ textAlign: 'right' }}>
+                      <span className="rv-section-label" style={{ marginBottom: '0.25rem' }}>Deposit (100% Refundable)</span>
+                      <strong style={{ fontSize: '1.1rem', color: '#0284c7' }}>{formatINR(securityDeposit)}</strong>
                     </div>
 
                     <div style={{ textAlign: 'right' }}>

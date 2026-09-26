@@ -5,7 +5,7 @@ import { CartContext } from '../context/CartContext';
 import { CityContext } from '../context/CityContext';
 import { cityOptions } from '../data/experience';
 import {
-  LogOut, MapPin, Search, ShoppingBag, UserCircle2, X, ChevronDown, Sparkles, Menu
+  LogOut, MapPin, Search, ShoppingBag, UserCircle2, X, ChevronDown, Sparkles, Menu, ShieldCheck
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -39,7 +39,9 @@ export default function Navbar() {
   const navItems = useMemo(() => {
     if (!user) return [
       { to: '/', label: 'Home' },
-      { to: '/releases', label: 'New Drops' },
+      { to: '/new-drops', label: 'New Drops' },
+      { to: '/financials', label: 'Financials' },
+      { to: '/journal', label: 'Journal' },
       { to: '/catalog', label: 'Browse' },
       { to: '#how-it-works', label: 'How it Works' },
     ];
@@ -55,7 +57,9 @@ export default function Navbar() {
     ];
     return [
       { to: '/', label: 'Home' },
-      { to: '/releases', label: 'New Drops' },
+      { to: '/new-drops', label: 'New Drops' },
+      { to: '/financials', label: 'Financials' },
+      { to: '/journal', label: 'Journal' },
       { to: '/catalog', label: 'Browse' },
       { to: '/my-bookings', label: 'Bookings' },
       { to: '/installations', label: 'Installations' },
@@ -159,6 +163,9 @@ export default function Navbar() {
                     <>
                       <Link to="/my-bookings" className="rvn__dropdown-item">
                         <ShoppingBag size={15} /> My Bookings
+                      </Link>
+                      <Link to="/kyc" className="rvn__dropdown-item">
+                        <ShieldCheck size={15} /> KYC Verification
                       </Link>
                       <Link to="/service-requests" className="rvn__dropdown-item">
                         <Sparkles size={15} /> Service Requests

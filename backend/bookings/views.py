@@ -136,7 +136,7 @@ class BookingDetailView(APIView):
 
         appliance = booking.appliance_id
 
-        # Tenant can only cancel requested bookings
+        # Tenant can cancel requested bookings or initiate return on active/approved rentals
         if request.user.role == 'tenant':
             if str(booking.tenant_id.id) != str(request.user.id):
                 return Response({"error": "Not your booking"}, status=status.HTTP_403_FORBIDDEN)
@@ -144,6 +144,20 @@ class BookingDetailView(APIView):
                 booking.status = 'cancelled'
                 booking.save()
                 return Response({"message": "Booking cancelled"}, status=status.HTTP_200_OK)
+            elif new_status == 'returned' and booking.status in ['active', 'approved', 'requested']:
+                booking.status = 'returned'
+                booking.save()
+                if appliance:
+                    appliance.available = True
+                    appliance.save()
+                import uuid
+                deposit_amt = getattr(appliance, 'deposit', 500.0) or 500.0
+                return Response({
+                    "message": "Rental returned successfully. Refund initiated!",
+                    "deposit_refunded": deposit_amt,
+                    "refund_transaction_id": f"RFND-IMPS-{uuid.uuid4().hex[:8].upper()}",
+                    "status": "returned"
+                }, status=status.HTTP_200_OK)
             return Response({"error": "Cannot perform this action"}, status=status.HTTP_403_FORBIDDEN)
 
         # Owner can approve, reject, mark active, mark returned

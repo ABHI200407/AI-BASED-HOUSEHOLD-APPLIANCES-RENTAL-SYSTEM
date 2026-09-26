@@ -118,7 +118,7 @@
 .rv-home-hero__orb {
   position: absolute;
   border-radius: 50%;
-  /* filter: blur(80px); */
+  /*  */
   opacity: 0.5;
   z-index: 0;
 }
@@ -154,7 +154,7 @@
   gap: 0.5rem;
   padding: 0.375rem 0.75rem;
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  
   border-radius: 99px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -230,7 +230,7 @@
 /* Move Planner */
 .rv-move-planner {
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(20px);
+  
   padding: 2rem;
   border-radius: var(--rv-radius-xl);
   box-shadow: var(--rv-shadow-float);
@@ -337,21 +337,22 @@
 
 /* Hero Ticker */
 .rv-hero-ticker {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--rv-color-primary);
+  position: relative;
+  background: var(--rv-color-primary, #111827);
   color: #fff;
-  padding: 1rem 0;
+  padding: 1.1rem 0;
   overflow: hidden;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .rv-hero-ticker__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 500;
-  font-size: 0.875rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }
 .rv-hero-ticker__inner i {
   width: 4px;
@@ -919,7 +920,7 @@
   position: sticky;
   top: 100px;
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(20px);
+  
   padding: 2rem;
   border-radius: var(--rv-radius-xl);
   box-shadow: var(--rv-shadow-float);
@@ -1125,8 +1126,8 @@
   top: 0;
   z-index: 200;
   background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  
+
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 .rvn__main {

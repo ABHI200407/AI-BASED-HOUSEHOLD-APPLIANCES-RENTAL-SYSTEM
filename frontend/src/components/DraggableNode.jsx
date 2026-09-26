@@ -67,7 +67,7 @@ export default function DraggableNode({ node }) {
         flexDirection: 'column',
         gap: '8px',
         minWidth: node.status === 'Training' ? '250px' : '150px',
-        backdropFilter: 'blur(10px)',
+        
         boxShadow: `0 0 20px ${getStatusColor()}20`
       }}
       onDoubleClick={handleDoubleClick}

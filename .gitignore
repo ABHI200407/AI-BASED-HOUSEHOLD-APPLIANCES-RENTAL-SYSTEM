@@ -34,3 +34,7 @@ temp.txt
 
 # Other developer's standalone version (isolated on disk, not tracked in this repository)
 RentAI/
+
+# Root copy of downloaded images (canonical copy is inside frontend/public/downloaded_images/)
+downloaded_images/
+

@@ -289,7 +289,7 @@ export default function ClothReveal({ children }) {
               border: '2px solid rgba(255,255,255,0.3)',
               borderRadius: '99px',
               cursor: 'pointer',
-              backdropFilter: 'blur(10px)',
+              
               transition: 'all 0.3s ease',
               boxShadow: '0 0 20px rgba(255,255,255,0.1)'
             }}

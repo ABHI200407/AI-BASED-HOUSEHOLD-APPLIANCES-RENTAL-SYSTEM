@@ -49,7 +49,21 @@ urlpatterns = [
     path('api/recommend/', include('ml_recommend.urls')),
     path('api/bi/', include('ml_forecast.urls')),
     path('api/churn/', include('ml_churn.urls')),
+    path('api/simulation/', include('simulation.urls')),
     path('api/chat/', chat_with_ollama, name='chat_with_ollama'),
+]
+
+import os
+from pathlib import Path
+from django.views.static import serve
+from django.urls import re_path
+
+_frontend_images = settings.BASE_DIR.parent / 'frontend' / 'public' / 'downloaded_images'
+_root_images = settings.BASE_DIR.parent / 'downloaded_images'
+DOWNLOADED_IMAGES_DIR = str(_frontend_images if _frontend_images.exists() else _root_images)
+
+urlpatterns += [
+    re_path(r'^downloaded_images/(?P<path>.*)$', serve, {'document_root': DOWNLOADED_IMAGES_DIR}),
 ]
 
 if settings.DEBUG:
