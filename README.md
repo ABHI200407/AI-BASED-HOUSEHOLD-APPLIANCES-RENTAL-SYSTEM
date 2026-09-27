@@ -29,6 +29,9 @@ SDC2/
 │   ├── package.json               # Node.js dependencies
 │   └── vite.config.js             # Vite bundler configuration
 ├── docs/                          # Official Documentation & Academic Research
+│   ├── pdf_deliverables/          # 20 Professional Publication-Quality PDF Documents
+│   │   ├── software/              # 13 Software Engineering Deliverables (SRS, SDLC, UML, DB, API, etc.)
+│   │   └── research/              # 7 Research & Capstone Deliverables (Paper, Proposal, Report, etc.)
 │   ├── academic_docs/             # SRS, SDD & Database Design, Project Plan (.docx)
 │   ├── research_papers/           # 10 Academic circular economy & leasing papers (.pdf)
 │   ├── specifications/            # Architecture, Data Models, Technical Specs (.md)
@@ -152,9 +155,28 @@ python manage.py train_forecast
 
 ## 📄 Documentation & Reports Reference
 
+### 🎓 20 Standard Engineering & Research PDF Deliverables (`docs/pdf_deliverables/`)
+
+| # | Software Engineering Deliverables (`software/`) | # | Research & Academic Deliverables (`research/`) |
+|---|------------------------------------------------|---|------------------------------------------------|
+| 1 | `01_Software_Requirements_Specification_SRS.pdf` | 1 | `01_Research_Paper.pdf` |
+| 2 | `02_Software_Development_Life_Cycle_SDLC.pdf` | 2 | `02_Research_Proposal.pdf` |
+| 3 | `03_Feasibility_Study.pdf` | 3 | `03_Project_Report.pdf` |
+| 4 | `04_Project_Proposal.pdf` | 4 | `04_User_Documentation.pdf` |
+| 5 | `05_Literature_Review.pdf` | 5 | `05_Technical_Documentation.pdf` |
+| 6 | `06_System_Design_Document_SDD.pdf` | 6 | `06_Security_Documentation.pdf` |
+| 7 | `07_UML_Documentation.pdf` | 7 | `07_Deployment_Documentation.pdf` |
+| 8 | `08_Database_Design_Document.pdf` | | |
+| 9 | `09_API_Documentation.pdf` | | |
+| 10 | `10_Software_Design_Document_LLD.pdf` | | |
+| 11 | `11_Test_Plan.pdf` | | |
+| 12 | `12_Test_Report.pdf` | | |
+| 13 | `13_AIML_Specific_Document.pdf` | | |
+
 * **Full Technical Report:** [`reports/FULL_TECHNICAL_REPORT.md`](file:///reports/FULL_TECHNICAL_REPORT.md)
 * **Algorithm & Metric Specification:** [`reports/EVALUATION_METRICS_SPECIFICATION.md`](file:///reports/EVALUATION_METRICS_SPECIFICATION.md)
 * **Architecture Design:** [`docs/specifications/ARCHITECTURE.md`](file:///docs/specifications/ARCHITECTURE.md)
 * **Data Models:** [`docs/specifications/DATA_MODELS.md`](file:///docs/specifications/DATA_MODELS.md)
 * **Academic Papers:** [`docs/research_papers/`](file:///docs/research_papers/)
 * **Presentations:** [`presentations/`](file:///presentations/)
+
