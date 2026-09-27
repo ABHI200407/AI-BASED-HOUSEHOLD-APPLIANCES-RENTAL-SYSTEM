@@ -8,15 +8,56 @@ from rest_framework.response import Response
 from appliances.models import Appliance
 from bookings.models import Booking
 
+import subprocess
+import shutil
+import time
+
 OLLAMA_API_URL = "http://localhost:11434/api/generate"
 OLLAMA_TAGS_URL = "http://localhost:11434/api/tags"
 DEFAULT_MODEL = "qwen2.5:0.5b"
+
+def auto_start_ollama_if_needed():
+    """
+    Auto-connects Ollama automatically:
+    Checks if Ollama is running on port 11434; if not, automatically launches
+    'ollama serve' as a background daemon process without blocking.
+    """
+    try:
+        res = requests.get(OLLAMA_TAGS_URL, timeout=1)
+        if res.status_code == 200:
+            return True
+    except Exception:
+        pass
+        
+    ollama_bin = shutil.which("ollama")
+    if ollama_bin:
+        try:
+            creationflags = getattr(subprocess, 'CREATE_NO_WINDOW', 0)
+            subprocess.Popen([ollama_bin, "serve"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=creationflags)
+            for _ in range(6):
+                time.sleep(0.5)
+                try:
+                    res = requests.get(OLLAMA_TAGS_URL, timeout=1)
+                    if res.status_code == 200:
+                        return True
+                except Exception:
+                    pass
+        except Exception:
+            pass
+    return False
+
+# Attempt auto-connection on import
+try:
+    auto_start_ollama_if_needed()
+except Exception:
+    pass
 
 def get_best_available_model():
     """
     Dynamically discover installed Ollama models, prioritizing lightweight
     models that run smoothly on CPU within available RAM.
     """
+    auto_start_ollama_if_needed()
     try:
         res = requests.get(OLLAMA_TAGS_URL, timeout=2)
         if res.status_code == 200:
@@ -203,8 +244,21 @@ Terms: Free delivery & setup, refundable security deposit, cancel anytime."""
         })
 
     except requests.exceptions.ConnectionError:
+        # Auto-connect retry: automatically start Ollama and retry request
+        if auto_start_ollama_if_needed():
+            try:
+                response = requests.post(OLLAMA_API_URL, json=payload, timeout=120)
+                response.raise_for_status()
+                data = response.json()
+                reply = data.get('response', "I'm sorry, I couldn't generate a response.")
+                return Response({
+                    "response": reply.strip(),
+                    "context_used": len(appliances),
+                })
+            except Exception:
+                pass
         return Response({
-            "error": "⚠️ Ollama is not running. Please start it by running: ollama serve",
+            "error": "⚠️ Ollama could not be auto-started. Please ensure Ollama is installed.",
         }, status=503)
     except requests.exceptions.Timeout:
         return Response({
