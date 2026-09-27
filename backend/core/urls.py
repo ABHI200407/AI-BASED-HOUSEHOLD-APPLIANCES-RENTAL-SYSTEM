@@ -38,7 +38,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from core.views_chat import chat_with_ollama
+from core.views_chat import chat_with_ollama, chat_status
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -51,6 +51,7 @@ urlpatterns = [
     path('api/churn/', include('ml_churn.urls')),
     path('api/simulation/', include('simulation.urls')),
     path('api/chat/', chat_with_ollama, name='chat_with_ollama'),
+    path('api/chat/status/', chat_status, name='chat_status'),
 ]
 
 import os

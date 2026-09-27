@@ -15,6 +15,7 @@ import time
 OLLAMA_API_URL = "http://localhost:11434/api/generate"
 OLLAMA_TAGS_URL = "http://localhost:11434/api/tags"
 DEFAULT_MODEL = "qwen2.5:0.5b"
+CURRENT_SELECTED_MODEL = None
 
 def auto_start_ollama_if_needed():
     """
@@ -23,9 +24,9 @@ def auto_start_ollama_if_needed():
     'ollama serve' as a background daemon process without blocking.
     """
     try:
-        res = requests.get(OLLAMA_TAGS_URL, timeout=1)
+        res = requests.get(OLLAMA_TAGS_URL, timeout=1.5)
         if res.status_code == 200:
-            return True
+            return True, "Ollama is already running and reachable."
     except Exception:
         pass
         
@@ -34,17 +35,18 @@ def auto_start_ollama_if_needed():
         try:
             creationflags = getattr(subprocess, 'CREATE_NO_WINDOW', 0)
             subprocess.Popen([ollama_bin, "serve"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=creationflags)
-            for _ in range(6):
+            for _ in range(8):
                 time.sleep(0.5)
                 try:
-                    res = requests.get(OLLAMA_TAGS_URL, timeout=1)
+                    res = requests.get(OLLAMA_TAGS_URL, timeout=1.5)
                     if res.status_code == 200:
-                        return True
+                        return True, "Ollama was automatically started and is now online."
                 except Exception:
                     pass
-        except Exception:
-            pass
-    return False
+            return False, "Ollama serve process launched but port 11434 did not respond in time."
+        except Exception as e:
+            return False, f"Failed to auto-launch Ollama executable: {str(e)}"
+    return False, "Ollama binary not found in system PATH."
 
 # Attempt auto-connection on import
 try:
@@ -52,27 +54,97 @@ try:
 except Exception:
     pass
 
-def get_best_available_model():
+def get_installed_ollama_models():
+    """
+    Fetch all installed models directly from Ollama API.
+    """
+    try:
+        res = requests.get(OLLAMA_TAGS_URL, timeout=2.5)
+        if res.status_code == 200:
+            models_data = res.json().get("models", [])
+            formatted = []
+            for m in models_data:
+                name = m.get("name", "")
+                size_bytes = m.get("size", 0)
+                size_mb = round(size_bytes / (1024 * 1024), 1)
+                details = m.get("details", {})
+                param_size = details.get("parameter_size", "unknown")
+                family = details.get("family", "")
+                formatted.append({
+                    "name": name,
+                    "size_mb": size_mb,
+                    "param_size": param_size,
+                    "family": family,
+                })
+            return formatted
+    except Exception:
+        pass
+    return []
+
+def get_best_available_model(preferred=None):
     """
     Dynamically discover installed Ollama models, prioritizing lightweight
     models that run smoothly on CPU within available RAM.
     """
-    auto_start_ollama_if_needed()
-    try:
-        res = requests.get(OLLAMA_TAGS_URL, timeout=2)
-        if res.status_code == 200:
-            installed = [m.get("name") for m in res.json().get("models", [])]
-            for candidate in ["qwen2.5:0.5b", "llama3.2:1b", "rentai-llm", "llama3.2:latest", "llama3.2", "qwen2.5:1.5b", "llama3:latest", "llama3"]:
-                if candidate in installed:
-                    return candidate
-                for m in installed:
-                    if m.startswith(candidate):
-                        return m
-            if installed:
-                return installed[0]
-    except Exception:
-        pass
+    installed_models = get_installed_ollama_models()
+    installed_names = [m["name"] for m in installed_models]
+
+    if preferred and preferred in installed_names:
+        return preferred
+
+    # Prioritize RentAI custom model, then ultra-fast lightweight models
+    priority_list = [
+        "rentai-llm:latest",
+        "rentai-llm",
+        "qwen2.5:0.5b",
+        "llama3.2:1b",
+        "llama3.2:latest",
+        "llama3.2",
+        "qwen2.5:1.5b",
+        "llama3:latest",
+        "llama3"
+    ]
+    for candidate in priority_list:
+        if candidate in installed_names:
+            return candidate
+        for m in installed_names:
+            if m.startswith(candidate):
+                return m
+
+    if installed_names:
+        return installed_names[0]
+
     return DEFAULT_MODEL
+
+
+@api_view(['GET', 'POST'])
+@permission_classes([AllowAny])
+def chat_status(request):
+    """
+    Endpoint for frontend to check connection status, auto-connect Ollama,
+    and discover installed local models.
+    """
+    global CURRENT_SELECTED_MODEL
+    started, msg = auto_start_ollama_if_needed()
+    installed_models = get_installed_ollama_models()
+    
+    if request.method == 'POST' and 'model' in request.data:
+        requested_model = request.data.get('model')
+        if any(m['name'] == requested_model for m in installed_models):
+            CURRENT_SELECTED_MODEL = requested_model
+
+    active_model = get_best_available_model(CURRENT_SELECTED_MODEL)
+
+    return Response({
+        "connected": bool(installed_models),
+        "status": "ready" if installed_models else "offline",
+        "message": msg,
+        "active_model": active_model,
+        "models": installed_models,
+        "device": "CPU (Optimized)",
+        "ollama_url": OLLAMA_API_URL,
+    })
+
 
 from mongoengine.queryset.visitor import Q
 
@@ -194,7 +266,8 @@ Terms: Free delivery & setup, refundable security deposit, cancel anytime."""
 
     full_prompt = f"{system_prompt}\n\nUser: {user_message}\nAssistant:"
 
-    active_model = get_best_available_model()
+    requested_model = request.data.get('model') or CURRENT_SELECTED_MODEL
+    active_model = get_best_available_model(requested_model)
     payload = {
         "model": active_model,
         "prompt": full_prompt,
@@ -219,12 +292,19 @@ Terms: Free delivery & setup, refundable security deposit, cancel anytime."""
                         chunk = json.loads(line.decode('utf-8'))
                         token = chunk.get('response', '')
                         done = chunk.get('done', False)
-                        data_str = json.dumps({'token': token, 'done': done})
+                        data_str = json.dumps({'token': token, 'done': done, 'model': active_model})
                         yield f"data: {data_str}\n\n"
                         if done:
                             break
             except Exception as e:
-                err_str = json.dumps({'error': str(e), 'done': True})
+                # Auto-start attempt if disconnected
+                started, msg = auto_start_ollama_if_needed()
+                err_str = json.dumps({
+                    'error': f"Ollama connection error: {str(e)} ({msg})",
+                    'done': True,
+                    'model': active_model,
+                    'can_retry': True
+                })
                 yield f"data: {err_str}\n\n"
 
         response = StreamingHttpResponse(stream_generator(), content_type='text/event-stream')
@@ -240,12 +320,14 @@ Terms: Free delivery & setup, refundable security deposit, cancel anytime."""
 
         return Response({
             "response": reply.strip(),
-            "context_used": len(appliances),  # debug: how many appliances were injected
+            "model": active_model,
+            "context_used": len(appliances),
         })
 
     except requests.exceptions.ConnectionError:
         # Auto-connect retry: automatically start Ollama and retry request
-        if auto_start_ollama_if_needed():
+        started, msg = auto_start_ollama_if_needed()
+        if started:
             try:
                 response = requests.post(OLLAMA_API_URL, json=payload, timeout=120)
                 response.raise_for_status()
@@ -253,18 +335,31 @@ Terms: Free delivery & setup, refundable security deposit, cancel anytime."""
                 reply = data.get('response', "I'm sorry, I couldn't generate a response.")
                 return Response({
                     "response": reply.strip(),
+                    "model": active_model,
                     "context_used": len(appliances),
                 })
-            except Exception:
-                pass
+            except Exception as retry_err:
+                return Response({
+                    "error": f"Ollama started but failed to process model '{active_model}': {str(retry_err)}",
+                    "model": active_model,
+                    "suggestion": "Try selecting a smaller model (e.g. qwen2.5:0.5b).",
+                }, status=503)
+
         return Response({
-            "error": "⚠️ Ollama could not be auto-started. Please ensure Ollama is installed.",
+            "error": "Ollama service is offline and auto-start could not reach port 11434.",
+            "details": msg,
+            "model": active_model,
+            "suggestion": "Ensure Ollama is installed and run 'ollama serve' in your terminal.",
         }, status=503)
     except requests.exceptions.Timeout:
         return Response({
-            "error": "⚠️ Ollama took too long to respond. Try a shorter question or restart Ollama.",
+            "error": f"Ollama inference timed out after 120 seconds using model '{active_model}'.",
+            "model": active_model,
+            "suggestion": "CPU load is high or the prompt is too large. Switch to a smaller model like qwen2.5:0.5b.",
         }, status=504)
     except requests.exceptions.RequestException as e:
         return Response({
-            "error": f"⚠️ Failed to connect to Ollama: {str(e)}",
+            "error": f"Failed to communicate with Ollama: {str(e)}",
+            "model": active_model,
         }, status=503)
+
