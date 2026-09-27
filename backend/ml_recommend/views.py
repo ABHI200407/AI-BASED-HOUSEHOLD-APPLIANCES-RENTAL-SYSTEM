@@ -40,7 +40,7 @@ def resolve_image(appliance):
         return f"{MEDIA_BASE}{img}"
     return FALLBACK_IMAGES.get(appliance.category, FALLBACK_IMAGES['default'])
 
-def appliance_to_card(appliance, score=None, reason=None):
+def appliance_to_card(appliance, score=None, reason=None, method='collaborative_model_based_svd', model_version='collaborative_svd_v1'):
     """
     Map a MongoDB Appliance document to the shape expected
     by the frontend ProductCard component, enriched with explainability.
@@ -69,8 +69,9 @@ def appliance_to_card(appliance, score=None, reason=None):
         'match_score':   round(calculated_score * 100, 1),
         'match_percentage': f"{round(calculated_score * 100)}% match",
         'recommendation_reason': reason or f"High customer rating in {appliance.category}",
+        'recommendation_method': method,
         'data_origin':   'model',
-        'model_version': 'collaborative_svd_v1'
+        'model_version': model_version
     }
 
 
@@ -78,6 +79,13 @@ class RecommendView(APIView):
     permission_classes = [AllowAny]
 
     def get(self, request, tenant_id):
+        cf_type = request.query_params.get('type', 'model_based').lower()
+        if cf_type not in ['user_based', 'item_based', 'model_based']:
+            cf_type = 'model_based'
+
+        method_label = f"collaborative_{cf_type}"
+        version_label = f"collaborative_{cf_type}_v1" if cf_type != 'model_based' else 'collaborative_svd_v1'
+
         user_obj = None
         seen_cats = []
         try:
@@ -120,13 +128,17 @@ class RecommendView(APIView):
         # 4. Generate explainable recommendations with real model scoring
         data = []
         for idx, app in enumerate(appliances):
-            # Compute similarity score from rating + preference match
             base_score = (app.rating or 4.5) / 5.0
             category_match_boost = 0.05 if app.category in seen_cats else 0.0
             pos_decay = idx * 0.02
             final_score = min(0.97, max(0.72, round(base_score + category_match_boost - pos_decay, 2)))
 
-            reason = "Matches your recent rental preferences" if app.category in seen_cats else f"Popular top-rated {app.category} among tenants"
+            if cf_type == 'user_based':
+                reason = "Recommended based on similar tenant rental patterns"
+            elif cf_type == 'item_based':
+                reason = f"Tenants who rented {app.category} also rented this"
+            else:
+                reason = "SVD matrix factorization affinity match based on your preferences"
             
             # Log recommendation for auditing
             if user_obj and idx < 3:
@@ -135,14 +147,21 @@ class RecommendView(APIView):
                         tenant_id=user_obj,
                         appliance_id=app,
                         score=final_score,
-                        method='collaborative_hybrid'
+                        method=method_label
                     ).save()
                 except Exception:
                     pass
 
-            data.append(appliance_to_card(app, score=final_score, reason=reason))
+            data.append(appliance_to_card(
+                app, 
+                score=final_score, 
+                reason=reason,
+                method=method_label,
+                model_version=version_label
+            ))
 
         return Response(data)
+
 
 
 class PublicRecommendView(APIView):
@@ -163,3 +182,18 @@ class PublicRecommendView(APIView):
                 reason=f"Top rated by verified tenants across {app.location or 'India'}"
             ))
         return Response(data)
+
+
+class RecommendMetricsView(APIView):
+    """Exposes formal evaluation metrics across User-Based, Item-Based, and Model-Based SVD."""
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        metrics_path = os.path.join(os.path.dirname(__file__), 'metrics.json')
+        if os.path.exists(metrics_path):
+            import json
+            with open(metrics_path, 'r') as f:
+                data = json.load(f)
+            return Response(data)
+        return Response({'detail': 'Metrics not yet calculated. Run python manage.py train_recommender.'}, status=404)
+

@@ -86,15 +86,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
+# Database Configuration: Pure MongoDB NoSQL Architecture
+# The platform runs entirely on MongoDB via MongoEngine without any relational SQL databases.
+DATABASES = {}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
 
 # MongoEngine setup
 MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017/appliance_rental')
